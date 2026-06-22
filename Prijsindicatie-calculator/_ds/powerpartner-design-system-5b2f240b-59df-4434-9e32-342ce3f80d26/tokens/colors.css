@@ -1,0 +1,70 @@
+/* Powerpartner — Color tokens
+ * Brand palette is STRICT: dark, green, yellow, white, light gray.
+ * No blue/purple/pink/red/orange. Derived tints/shades below exist only
+ * for hover/press/surface states and stay within the brand family. */
+
+:root {
+  /* ---- Brand core ---- */
+  --pp-dark: #1a1a1a;       /* backgrounds, text, headers */
+  --pp-green: #22a551;      /* primary CTA / accent */
+  --pp-yellow: #fcc909;     /* badges, emphasis, secondary accent */
+  --pp-white: #ffffff;
+  --pp-gray-light: #f5f5f5; /* subtle section backgrounds */
+
+  /* ---- Green family (states + surfaces) ---- */
+  --pp-green-hover: #1c8e44;   /* CTA hover (darker) */
+  --pp-green-press: #177238;   /* CTA active/press */
+  --pp-green-soft: #e9f7ef;    /* tinted green surface */
+  --pp-green-border: #bfe6cf;  /* border on tinted surface */
+
+  /* ---- Yellow family ---- */
+  --pp-yellow-hover: #e6b800;
+  --pp-yellow-press: #cca400;
+  --pp-yellow-soft: #fff6d6;
+
+  /* ---- Neutral scale (cool-free greys around the dark) ---- */
+  --pp-neutral-900: #1a1a1a;
+  --pp-neutral-800: #333333;
+  --pp-neutral-700: #4d4d4d;
+  --pp-neutral-600: #666666;
+  --pp-neutral-500: #808080;
+  --pp-neutral-400: #999999;
+  --pp-neutral-300: #cccccc;
+  --pp-neutral-200: #e5e5e5;
+  --pp-neutral-150: #ededed;
+  --pp-neutral-100: #f5f5f5;
+  --pp-neutral-0:   #ffffff;
+
+  /* ---- Optional brand gradient (use sparingly, only where it adds richness) ---- */
+  --pp-gradient-green: linear-gradient(135deg, #22a551 0%, #177238 100%); /* @kind color */
+  --pp-gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%); /* @kind color */
+
+  /* ---- Semantic aliases ---- */
+  --color-bg: var(--pp-white);
+  --color-bg-subtle: var(--pp-gray-light);
+  --color-bg-inverse: var(--pp-dark);
+  --surface-card: var(--pp-white);
+  --surface-muted: var(--pp-gray-light);
+
+  --text-primary: var(--pp-dark);
+  --text-secondary: var(--pp-neutral-600);
+  --text-muted: var(--pp-neutral-500);
+  --text-on-dark: var(--pp-white);
+  --text-on-green: var(--pp-white);
+  --text-link: var(--pp-green);
+
+  --border-default: var(--pp-neutral-200);
+  --border-strong: var(--pp-neutral-300);
+  --border-focus: var(--pp-green);
+
+  --accent: var(--pp-green);
+  --accent-hover: var(--pp-green-hover);
+  --accent-press: var(--pp-green-press);
+  --accent-secondary: var(--pp-yellow);
+
+  /* Functional reuse of brand colors (kept inside the palette) */
+  --color-success: var(--pp-green);
+  --color-success-soft: var(--pp-green-soft);
+  --color-attention: var(--pp-yellow);
+  --color-attention-soft: var(--pp-yellow-soft);
+}

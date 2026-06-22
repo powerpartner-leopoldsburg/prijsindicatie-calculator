@@ -1,0 +1,43 @@
+/* Powerpartner — Typography tokens
+ * One family: Montserrat. Bold (700) for headings, Regular (400) body. */
+
+:root {
+  --font-family-base: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: var(--font-family-base);
+
+  /* Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Type scale (rem, 16px base) */
+  --font-size-display: 4rem;     /* 64px — hero H1 */
+  --font-size-h1: 3rem;          /* 48px */
+  --font-size-h2: 2.25rem;       /* 36px */
+  --font-size-h3: 1.75rem;       /* 28px */
+  --font-size-h4: 1.375rem;      /* 22px */
+  --font-size-lg: 1.25rem;       /* 20px — lead paragraph */
+  --font-size-base: 1rem;        /* 16px — body */
+  --font-size-sm: 0.875rem;      /* 14px */
+  --font-size-xs: 0.75rem;       /* 12px — labels/eyebrow */
+
+  /* Line heights */
+  --line-height-tight: 1.1;      /* display/headings */
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.6;     /* body copy */
+
+  /* Letter spacing */
+  --letter-spacing-tight: -0.02em;  /* large headings */
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.08em;    /* eyebrow/labels (uppercase) */
+
+  /* Semantic text roles */
+  --text-display-size: var(--font-size-display);
+  --text-display-weight: var(--font-weight-bold);
+  --text-body-size: var(--font-size-base);
+  --text-body-weight: var(--font-weight-regular);
+  --text-eyebrow-size: var(--font-size-xs);
+  --text-eyebrow-weight: var(--font-weight-bold);
+}

@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./support.js"></script>
+</head>
+
+<body>
+  <x-dc>
+    <helmet>
+      <link rel="stylesheet"
+        href="_ds/powerpartner-design-system-5b2f240b-59df-4434-9e32-342ce3f80d26/tokens/fonts.css">
+      <link rel="stylesheet"
+        href="_ds/powerpartner-design-system-5b2f240b-59df-4434-9e32-342ce3f80d26/tokens/colors.css">
+      <link rel="stylesheet"
+        href="_ds/powerpartner-design-system-5b2f240b-59df-4434-9e32-342ce3f80d26/tokens/typography.css">
+      <link rel="stylesheet"
+        href="_ds/powerpartner-design-system-5b2f240b-59df-4434-9e32-342ce3f80d26/tokens/effects.css">
+      <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+          color: #9aa0a6;
+        }
+      </style>
+    </helmet>
+
+    <div
+      style="min-height:100vh; background:#f5f6f8; display:flex; flex-direction:column; align-items:center; padding:32px 16px; font-family:Montserrat,-apple-system,sans-serif; -webkit-font-smoothing:antialiased;">
+      <div
+        style="width:100%; max-width:600px; background:#ffffff; border-radius:24px; box-shadow:0 1px 3px rgba(26,26,26,.05), 0 10px 36px rgba(26,26,26,.06); overflow:hidden;">
+
+        <!-- Header -->
+        <div
+          style="display:flex; align-items:center; justify-content:space-between; padding:20px 28px; border-bottom:1px solid #eef0f2;">
+          <div style="display:flex; align-items:center;">
+            <img src="https://assets.cdn.filesafe.space/dv35VrvNw6c4zSIIERee/media/69ac321436702f81623e4a30.svg"
+              alt="PowerPartner" style="height:38px;">
+          </div>
+          <span
+            style="background:var(--pp-green-soft); color:var(--pp-green); font-size:14px; font-weight:700; padding:7px 16px; border-radius:999px;">Prijsindicatie</span>
+        </div>
+
+        <!-- Trust row -->
+        <div
+          style="display:flex; align-items:center; justify-content:space-between; padding:13px 28px; border-bottom:1px solid #eef0f2;">
+          <div style="display:flex; align-items:center; gap:9px;">
+            <span style="color:var(--pp-green); font-size:17px; letter-spacing:1px;">★★★★★</span>
+            <span style="font-size:15px; font-weight:700; color:#1a1a1a;">5/5</span>
+            <span style="font-size:15px; color:#9aa0a6;">· 53 reviews</span>
+          </div>
+          <span style="font-size:15px; color:#9aa0a6;">Gratis &amp; vrijblijvend</span>
+        </div>
+
+        <!-- Progress -->
+        <sc-if value="{{ showProgress }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:20px 28px 4px;">
+            <div style="display:flex; gap:7px;">
+              <sc-for list="{{ topSegs }}" as="s" hint-placeholder-count="5">
+                <div style="flex:1; height:6px; border-radius:999px; background:{{ s.bg }};"></div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ showQLabeled }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:18px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px;">
+                  <span style="font-size:14px; color:#9aa0a6;">Stap {{ qIndex }}/{{ qTotal }}</span>
+                  <span style="font-size:14px; font-weight:700; color:var(--pp-green);">{{ qServiceName }}</span>
+                </div>
+                <div style="display:flex; gap:7px;">
+                  <sc-for list="{{ qSegs }}" as="s" hint-placeholder-count="5">
+                    <div style="flex:1; height:4px; border-radius:999px; background:{{ s.bg }};"></div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <!-- ============ STEP 0 — INTRO ============ -->
+        <sc-if value="{{ isIntro }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:24px 28px 8px;">
+            <div style="border-radius:18px; padding:30px 30px 26px; color:#ffffff; background:{{ heroBg }};">
+              <div style="display:flex; justify-content:flex-end;">
+                <span
+                  style="display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.18); padding:7px 14px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:0.08em;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path>
+                  </svg>
+                  PRIJSINDICATIE SIMULATOR
+                </span>
+              </div>
+              <div
+                style="font-size:33px; font-weight:700; line-height:1.12; letter-spacing:-0.02em; margin:8px 0 14px;">
+                Jouw persoonlijke prijsindicatie <span style="font-weight:400; opacity:.92;">in enkele minuten.</span>
+              </div>
+              <div style="font-size:17px; line-height:1.5; opacity:.95;">Een echte indicatie op maat, gebaseerd op je
+                verbruik, woning en situatie.</div>
+              <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;">
+                <span
+                  style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.18); padding:9px 15px; border-radius:999px; font-size:14px; font-weight:700;"><svg
+                    width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>Eerlijke prijsindicatie</span>
+                <span
+                  style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.18); padding:9px 15px; border-radius:999px; font-size:14px; font-weight:700;"><svg
+                    width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>Afgestemd op je situatie</span>
+                <span
+                  style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.18); padding:9px 15px; border-radius:999px; font-size:14px; font-weight:700;"><svg
+                    width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>Gratis &amp; vrijblijvend</span>
+              </div>
+              <div style="height:1px; background:rgba(255,255,255,.22); margin:22px 0 16px;"></div>
+              <div style="display:flex; align-items:center; gap:9px; font-size:15px; font-weight:600;">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Resultaat in 2 minuten
+              </div>
+            </div>
+
+            <div style="margin-top:26px;">
+              <div style="font-size:19px; font-weight:700; color:#1a1a1a; margin-bottom:13px;">Voor wie is de
+                prijsindicatie?
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                <button onClick="{{ segPart.onClick }}"
+                  style="padding:20px; border-radius:12px; border:2px solid {{ segPart.border }}; background:{{ segPart.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:16px; font-weight:{{ segPart.weight }}; cursor:pointer; transition:all 150ms;"
+                  style-hover="border-color:#22a551;">Particulier</button>
+                <button onClick="{{ segBiz.onClick }}"
+                  style="padding:20px; border-radius:12px; border:2px solid {{ segBiz.border }}; background:{{ segBiz.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:16px; font-weight:{{ segBiz.weight }}; cursor:pointer; transition:all 150ms;"
+                  style-hover="border-color:#22a551;">Bedrijf</button>
+              </div>
+            </div>
+
+            <div style="margin-top:22px; background:var(--pp-green-soft); border-radius:14px; padding:22px 24px;">
+              <div
+                style="font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--pp-green); margin-bottom:14px;">
+                Waarom Powerpartner?</div>
+              <div style="display:flex; flex-direction:column; gap:13px;">
+                <div style="display:flex; align-items:center; gap:11px; font-size:16px; color:#1a1a1a;"><svg width="18"
+                    height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>1550+ installaties &amp; 9+ jaar ervaring</div>
+                <div style="display:flex; align-items:center; gap:11px; font-size:16px; color:#1a1a1a;"><svg width="18"
+                    height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>Vaste prijs, geen verrassingen</div>
+                <div style="display:flex; align-items:center; gap:11px; font-size:16px; color:#1a1a1a;"><svg width="18"
+                    height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>Onafhankelijk, top kwaliteit, geen vendor lock-in</div>
+                <div style="display:flex; align-items:center; gap:11px; font-size:16px; color:#1a1a1a;"><svg width="18"
+                    height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>Gratis energie-advies aan huis</div>
+              </div>
+            </div>
+
+            <button onClick="{{ onNext }}"
+              style="margin-top:24px; width:100%; padding:18px 24px; background:var(--pp-green); color:#fff; border:none; border-radius:12px; font-family:Montserrat; font-size:17px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;"
+              style-hover="background:var(--pp-green-hover);">Start mijn prijsindicatie <span
+                style="font-size:19px;">→</span></button>
+          </div>
+        </sc-if>
+
+        <!-- ============ INTERESSE ============ -->
+        <sc-if value="{{ isInteresse }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:24px 28px 8px;">
+            <div style="font-size:27px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Waarin heb je
+              interesse?</div>
+            <div style="font-size:16px; color:#6b7178; margin-top:7px;">Kies één of meerdere. Per product stellen we
+              daarna enkele korte vragen.</div>
+
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#9aa0a6; margin:24px 0 12px;">
+              ENERGIE-OPWEKKING &amp; OPSLAG</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <button onClick="{{ intr.zonnepanelen.onClick }}"
+                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.zonnepanelen.border }}; background:{{ intr.zonnepanelen.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style-hover="border-color:#22a551;">
+                <span
+                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path
+                      d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4">
+                    </path>
+                  </svg></span>
+                <span><span
+                    style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Zonnepanelen</span><span
+                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Bespaar met je eigen
+                    zonne-energie</span></span>
+              </button>
+              <button onClick="{{ intr.thuisbatterij.onClick }}"
+                style="position:relative; text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.thuisbatterij.border }}; background:{{ intr.thuisbatterij.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style-hover="border-color:#22a551;">
+                <span
+                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="16" height="10" rx="2"></rect>
+                    <line x1="22" y1="11" x2="22" y2="13"></line>
+                  </svg></span>
+                <span><span
+                    style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Thuisbatterij</span><span
+                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Haal meer rendement uit je
+                    panelen</span></span>
+                <span
+                  style="position:absolute; top:14px; right:14px; background:var(--pp-green-soft); color:var(--pp-green); font-size:12px; font-weight:700; padding:3px 10px; border-radius:999px;">Populair</span>
+              </button>
+              <button onClick="{{ intr.laadpaal.onClick }}"
+                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.laadpaal.border }}; background:{{ intr.laadpaal.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style-hover="border-color:#22a551;">
+                <span
+                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg></span>
+                <span><span style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Laadpaal</span><span
+                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Laad je wagen thuis met
+                    zonne-energie</span></span>
+              </button>
+              <button onClick="{{ intr.ems.onClick }}"
+                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.ems.border }}; background:{{ intr.ems.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style-hover="border-color:#22a551;">
+                <span
+                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg></span>
+                <span><span style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">EMS</span><span
+                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Slim energiebeheer &amp;
+                    sturing</span></span>
+              </button>
+            </div>
+
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#9aa0a6; margin:26px 0 12px;">
+              VERWARMING &amp; WATER</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <button onClick="{{ intr.warmtepomp.onClick }}"
+                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.warmtepomp.border }}; background:{{ intr.warmtepomp.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style-hover="border-color:#22a551;">
+                <span
+                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4 4 0 1 0 5 0z"></path>
+                  </svg></span>
+                <span><span
+                    style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Warmtepomp</span><span
+                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Verwarm zuinig en zonder
+                    gas</span></span>
+              </button>
+              <button onClick="{{ intr.warmtepompboiler.onClick }}"
+                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.warmtepompboiler.border }}; background:{{ intr.warmtepompboiler.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style-hover="border-color:#22a551;">
+                <span
+                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                  </svg></span>
+                <span><span
+                    style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Warmtepompboiler</span><span
+                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Tot 75% zuiniger warm
+                    water</span></span>
+              </button>
+              <button onClick="{{ intr.airco.onClick }}"
+                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.airco.border }}; background:{{ intr.airco.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style-hover="border-color:#22a551;">
+                <span
+                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9.59 4.59A2 2 0 1 1 11 8H2M12.59 19.41A2 2 0 1 0 14 16H2M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2">
+                    </path>
+                  </svg></span>
+                <span><span style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Airco</span><span
+                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Koelen in de zomer, verwarmen
+                    in de winter</span></span>
+              </button>
+              <button onClick="{{ intr.iets_anders.onClick }}"
+                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.iets_anders.border }}; background:{{ intr.iets_anders.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style-hover="border-color:#22a551;">
+                <span
+                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg></span>
+                <span><span style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Iets
+                    anders</span><span style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Vertel ons
+                    wat je zoekt</span></span>
+              </button>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ============ GENERIC QUESTION ============ -->
+        <sc-if value="{{ isQuestion }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:22px 28px 8px;">
+            <span
+              style="display:inline-flex; align-items:center; gap:7px; background:var(--pp-green-soft); color:var(--pp-green); padding:7px 14px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:0.06em;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path>
+              </svg>
+              {{ q.eyebrow }}
+            </span>
+            <div style="font-size:25px; font-weight:700; color:#1a1a1a; margin:15px 0 6px; letter-spacing:-0.01em;">{{
+              q.title }}</div>
+            <div style="font-size:16px; color:#6b7178; margin-bottom:22px;">{{ q.subtitle }}</div>
+
+
+
+            <sc-if value="{{ q.isNotes }}" hint-placeholder-val="{{ false }}">
+              <textarea value="{{ notesValue }}" onChange="{{ onNotes }}"
+                placeholder="Bv. specifieke wensen of een vraag"
+                style="width:100%; min-height:120px; padding:16px; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:16px; color:#1a1a1a; resize:vertical;"
+                style-focus="outline:none; border-color:#22a551; box-shadow:var(--shadow-focus);"></textarea>
+            </sc-if>
+
+            <sc-if value="{{ q.hasOptions }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="2">
+                  <button onClick="{{ opt.onClick }}"
+                    style="text-align:center; padding:22px 14px; border-radius:12px; border:2px solid {{ opt.border }}; background:{{ opt.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:16px; font-weight:{{ opt.weight }}; cursor:pointer; transition:all 150ms;"
+                    style-hover="border-color:#22a551;">{{ opt.label }}</button>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ q.showNumberInput }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:18px;">
+                <label style="display:block; font-size:14px; color:#6b7178; margin-bottom:8px;">Jaarverbruik
+                  (kWh)</label>
+                <input type="number" value="{{ q.numberValue }}" onChange="{{ q.onNumberChange }}"
+                  style="width:100%; padding:16px; border:2px solid #22a551; border-radius:12px; font-family:Montserrat; font-size:17px; color:#1a1a1a;"
+                  style-focus="outline:none; box-shadow:var(--shadow-focus);">
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ q.hasSecondary }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:22px;">
+                <div style="font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:12px;">{{ q.secondaryTitle }}
+                </div>
+                <div style="display:grid; grid-template-columns:repeat({{ q.secondaryCols }}, 1fr); gap:12px;">
+                  <sc-for list="{{ q.secondaryOptions }}" as="opt" hint-placeholder-count="2">
+                    <button onClick="{{ opt.onClick }}"
+                      style="text-align:center; padding:16px 12px; border-radius:12px; border:2px solid {{ opt.border }}; background:{{ opt.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:15px; font-weight:{{ opt.weight }}; cursor:pointer; transition:all 150ms;"
+                      style-hover="border-color:#22a551;">{{ opt.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ q.hasWeetIkNiet }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ q.weetIkNiet.onClick }}"
+                style="margin-top:16px; display:flex; align-items:center; gap:9px; background:none; border:none; padding:0; cursor:pointer; font-family:Montserrat;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span style="font-size:15px; color:#9aa0a6;">Weet ik niet — <span
+                    style="color:var(--pp-green); font-weight:700;">{{ q.weetIkNiet.label }}</span></span>
+              </button>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <!-- ============ RESULT ============ -->
+        <sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:24px 28px 8px;">
+            <sc-if value="{{ isVerwarmingOnly }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:25px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">We maken je indicatie
+                op maat</div>
+              <div style="font-size:16px; color:#6b7178; margin-top:10px; line-height:1.5;">Voor warmtepomp, boiler en
+                airco hangt de prijs sterk af van je woning. We maken je indicatie op maat tijdens een gratis
+                adviesgesprek.</div>
+              <div style="margin-top:20px; background:var(--pp-green-soft); border-radius:14px; padding:20px;">
+                <div
+                  style="font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--pp-green); margin-bottom:12px;">
+                  JE INTERESSE</div>
+                <sc-for list="{{ verwarmingChips }}" as="c" hint-placeholder-count="2">
+                  <div
+                    style="display:flex; align-items:center; gap:10px; font-size:16px; color:#1a1a1a; padding:5px 0;">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>{{ c }} — bespreken we tijdens je adviesgesprek
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ hasPricing }}" hint-placeholder-val="{{ true }}">
+              <div style="font-size:16px; color:#9aa0a6;">Prijs indicatie</div>
+              <div
+                style="font-size:42px; font-weight:700; color:#1a1a1a; letter-spacing:-0.02em; line-height:1.05; margin-top:4px;">
+                {{ r.low }} – {{ r.high }}</div>
+              <div style="font-size:15px; color:#9aa0a6; margin-top:8px;">incl. btw · richtprijs, definitief na
+                adviesgesprek</div>
+
+              <sc-if value="{{ r.hasVoordeel }}" hint-placeholder-val="{{ true }}">
+                <div
+                  style="margin-top:20px; background:var(--pp-green-soft); border-radius:14px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start;">
+                  <span
+                    style="flex:none; width:38px; height:38px; border-radius:9px; background:#fff; display:flex; align-items:center; justify-content:center;"><svg
+                      width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"></path>
+                    </svg></span>
+                  <span><span style="display:block; font-size:17px; font-weight:700; color:var(--pp-green);">Je bespaart
+                      ± {{ r.voordeel }} aan btw</span><span
+                      style="display:block; font-size:14px; color:#5a8a6c; margin-top:3px;">{{ r.btwNote
+                      }}</span></span>
+                </div>
+              </sc-if>
+
+              <!-- breakdown -->
+              <div style="margin-top:20px; border:1px solid #e8eaed; border-radius:14px; overflow:hidden;">
+                <sc-for list="{{ r.breakdown }}" as="b" hint-placeholder-count="2">
+                  <div
+                    style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:18px 20px; border-bottom:1px solid #f0f1f3;">
+                    <span><span style="display:block; font-size:17px; font-weight:700; color:#1a1a1a;">{{ b.label
+                        }}</span><span style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">{{ b.sub
+                        }}</span></span>
+                    <span style="font-size:17px; font-weight:700; color:#1a1a1a; white-space:nowrap;">{{ b.amount
+                      }}</span>
+                  </div>
+                </sc-for>
+                <div
+                  style="display:flex; justify-content:space-between; padding:13px 20px 5px; font-size:15px; color:#6b7178;">
+                  <span>Prijs excl. btw</span><span>{{ r.excl }}</span>
+                </div>
+                <div
+                  style="display:flex; justify-content:space-between; padding:5px 20px; font-size:15px; color:#6b7178;">
+                  <span>btw</span><span>{{ r.btw }}</span>
+                </div>
+                <div
+                  style="display:flex; justify-content:space-between; padding:8px 20px 16px; font-size:18px; font-weight:700; color:#1a1a1a;">
+                  <span>Totaal incl. btw</span><span>{{ r.total }}</span>
+                </div>
+              </div>
+
+              <!-- slider -->
+              <sc-if value="{{ r.hasZon }}" hint-placeholder-val="{{ true }}">
+                <div style="margin-top:18px; border:1px solid #e8eaed; border-radius:14px; padding:20px;">
+                  <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                    <span style="font-size:16px; font-weight:600; color:#1a1a1a;">Pas het aantal panelen aan</span>
+                    <span style="font-size:17px; font-weight:700; color:var(--pp-green);">{{ r.panels }}</span>
+                  </div>
+                  <input type="range" min="{{ r.sliderMin }}" max="{{ r.sliderMax }}" value="{{ r.sliderVal }}"
+                    onChange="{{ onPanels }}" oninput="{{ onPanels }}"
+                    style="width:100%; margin:16px 0 6px; accent-color:var(--pp-green); cursor:pointer;">
+                  <div style="display:flex; justify-content:space-between; font-size:15px; color:#9aa0a6;"><span>{{
+                      r.kwp }}</span><span>{{ r.opbrengst }}</span></div>
+                </div>
+              </sc-if>
+
+              <!-- savings -->
+              <div style="margin-top:18px; background:var(--pp-green-soft); border-radius:14px; padding:22px;">
+                <div
+                  style="display:flex; align-items:center; gap:9px; font-size:13px; font-weight:700; letter-spacing:0.05em; color:var(--pp-green);">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                    <polyline points="16 7 22 7 22 13"></polyline>
+                  </svg>JOUW BESPARING
+                </div>
+                <div
+                  style="font-size:33px; font-weight:700; color:var(--pp-green); margin:10px 0 16px; letter-spacing:-0.01em;">
+                  {{ r.per25 }}</div>
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+                  <div style="background:#fff; border-radius:10px; padding:14px; text-align:center;">
+                    <div style="font-size:18px; font-weight:700; color:#1a1a1a;">{{ r.perMonth }}</div>
+                    <div style="font-size:13px; color:#9aa0a6; margin-top:2px;">per maand</div>
+                  </div>
+                  <div style="background:#fff; border-radius:10px; padding:14px; text-align:center;">
+                    <div style="font-size:18px; font-weight:700; color:#1a1a1a;">{{ r.perYear }}</div>
+                    <div style="font-size:13px; color:#9aa0a6; margin-top:2px;">per jaar</div>
+                  </div>
+                  <div style="background:#fff; border-radius:10px; padding:14px; text-align:center;">
+                    <div style="font-size:18px; font-weight:700; color:#1a1a1a;">{{ r.payback }}</div>
+                    <div style="font-size:13px; color:#9aa0a6; margin-top:2px;">terugverdiend</div>
+                  </div>
+                </div>
+                <div style="font-size:14px; color:#5a8a6c; margin-top:14px;">{{ r.savingsCaption }}</div>
+              </div>
+
+              <!-- inbegrepen -->
+              <div style="margin-top:18px; border:1px solid #e8eaed; border-radius:14px; padding:20px;">
+                <div style="font-size:17px; font-weight:700; color:#1a1a1a; margin-bottom:14px;">Inbegrepen in deze
+                  prijs</div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:13px;">
+                  <sc-for list="{{ r.inbegrepen }}" as="i" hint-placeholder-count="4">
+                    <div style="display:flex; align-items:center; gap:10px; font-size:15px; color:#1a1a1a;"><svg
+                        width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>{{ i }}</div>
+                  </sc-for>
+                </div>
+              </div>
+
+              <sc-if value="{{ hasVerwarmingExtra }}" hint-placeholder-val="{{ false }}">
+                <div style="margin-top:14px; font-size:14px; color:#9aa0a6; line-height:1.5;">{{ verwarmingExtraNote }}
+                </div>
+              </sc-if>
+            </sc-if>
+
+            <!-- trust + CTA -->
+            <div
+              style="display:flex; align-items:center; gap:9px; justify-content:center; margin-top:24px; font-size:15px; color:#9aa0a6;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"></path>
+              </svg>
+              Gratis &amp; vrijblijvend
+            </div>
+            <div
+              style="display:flex; align-items:center; gap:9px; justify-content:center; margin-top:10px; font-size:15px; color:#6b7178;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Al 1550+ gezinnen kozen voor Powerpartner
+            </div>
+            <button onClick="{{ onToContact }}"
+              style="margin-top:18px; width:100%; padding:19px 24px; background:var(--pp-green); color:#fff; border:none; border-radius:12px; font-family:Montserrat; font-size:17px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;"
+              style-hover="background:var(--pp-green-hover);">Ontvang offerte &amp; plan adviesgesprek <span
+                style="font-size:19px;">→</span></button>
+            <button onClick="{{ onRestart }}"
+              style="width:100%; margin-top:6px; padding:14px; background:none; border:none; font-family:Montserrat; font-size:15px; color:#9aa0a6; cursor:pointer;"
+              style-hover="color:#6b7178;">Opnieuw beginnen</button>
+          </div>
+        </sc-if>
+
+        <!-- ============ CONTACT ============ -->
+        <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:22px 28px 8px;">
+            <div style="font-size:26px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Waar mogen we je
+              offerte sturen?</div>
+            <div style="font-size:16px; color:#6b7178; margin-top:7px;">Powerpartner neemt contact op om je
+              adviesgesprek
+              in te plannen.</div>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:22px;">
+              <sc-for list="{{ contactFields }}" as="f" hint-placeholder-count="6">
+                <input type="{{ f.type }}" value="{{ f.value }}" onChange="{{ f.onChange }}"
+                  placeholder="{{ f.placeholder }}"
+                  style="width:100%; padding:17px; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:16px; color:#1a1a1a;"
+                  style-focus="outline:none; border-color:#22a551; box-shadow:var(--shadow-focus);">
+              </sc-for>
+            </div>
+            <button onClick="{{ onToggleConsent }}"
+              style="display:flex; align-items:flex-start; gap:12px; margin-top:18px; background:none; border:none; padding:0; cursor:pointer; text-align:left; font-family:Montserrat;">
+              <span
+                style="flex:none; width:22px; height:22px; border-radius:6px; border:2px solid {{ consentBorder }}; background:{{ consentBg }}; display:flex; align-items:center; justify-content:center; margin-top:1px;"><svg
+                  width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity:{{ consentCheck }};">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span>
+              <span style="font-size:15px; color:#4d4d4d; line-height:1.45;">Ik geef Powerpartner toestemming om mijn
+                gegevens te gebruiken om mijn aanvraag te behandelen.</span>
+            </button>
+          </div>
+        </sc-if>
+
+        <!-- ============ CONFIRMATION ============ -->
+        <sc-if value="{{ isConfirmation }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:48px 32px 44px; text-align:center;">
+            <div
+              style="width:72px; height:72px; border-radius:50%; background:var(--pp-green-soft); display:flex; align-items:center; justify-content:center; margin:0 auto 24px;">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div style="font-size:27px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Bedankt! Je offerte is
+              onderweg.</div>
+            <div
+              style="font-size:16px; color:#6b7178; margin-top:12px; line-height:1.5; max-width:380px; margin-left:auto; margin-right:auto;">
+              Een van onze energie-experts neemt contact op om je adviesgesprek in te plannen. Je hoort snel van ons.
+            </div>
+            <button onClick="{{ onRestart }}"
+              style="margin-top:28px; padding:14px 28px; background:none; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:15px; font-weight:700; color:#1a1a1a; cursor:pointer;"
+              style-hover="border-color:#22a551;">Opnieuw beginnen</button>
+          </div>
+        </sc-if>
+
+        <!-- ============ FOOTER NAV ============ -->
+        <sc-if value="{{ showFooterNav }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; gap:12px; padding:18px 28px 26px;">
+            <button onClick="{{ onBack }}"
+              style="padding:18px 26px; background:#fff; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:16px; font-weight:700; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; gap:9px;"
+              style-hover="border-color:#22a551;"><span style="font-size:18px;">←</span> Terug</button>
+            <button onClick="{{ onNext }}" disabled="{{ nextDisabled }}"
+              style="flex:1; padding:18px 24px; background:{{ nextBg }}; color:{{ nextColor }}; border:none; border-radius:12px; font-family:Montserrat; font-size:17px; font-weight:700; cursor:{{ nextCursor }}; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;">
+              <sc-if value="{{ nextSparkle }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path>
+                </svg></sc-if>
+              {{ nextLabel }} <span style="font-size:19px;">→</span>
+            </button>
+          </div>
+        </sc-if>
+
+        <!-- ============ CONTACT FOOTER ============ -->
+        <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; gap:12px; padding:8px 28px 26px;">
+            <button onClick="{{ onBack }}"
+              style="padding:18px 26px; background:#fff; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:16px; font-weight:700; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; gap:9px;"
+              style-hover="border-color:#22a551;"><span style="font-size:18px;">←</span> Terug</button>
+            <button onClick="{{ onSubmit }}" disabled="{{ submitDisabled }}"
+              style="flex:1; padding:18px 24px; background:{{ submitBg }}; color:{{ submitColor }}; border:none; border-radius:12px; font-family:Montserrat; font-size:17px; font-weight:700; cursor:{{ submitCursor }}; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;">Verstuur
+              <span style="font-size:19px;">→</span></button>
+          </div>
+        </sc-if>
+
+      </div>
+      <div style="font-size:13px; color:#b8bcc2; margin-top:18px;">Powerpartner - Empowering Green Innovation</div>
+    </div>
+  </x-dc>
+  <script type="text/x-dc" data-dc-script
+    data-props="{&quot;$preview&quot;:{&quot;width&quot;:640,&quot;height&quot;:920},&quot;defaultMarket&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;BE&quot;,&quot;NL&quot;],&quot;default&quot;:&quot;BE&quot;,&quot;tsType&quot;:&quot;'BE'|'NL'&quot;},&quot;heroGradient&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  // ===================================================================
+  // CONSTANTS — single source of truth for the pricing engine.
+  // Swap these numbers freely; no UI code depends on the values.
+  // ===================================================================
+  CONSTANTS = {
+    RANGE_MARGIN: 0.10,
+    PANEL_WP: 440,
+    PRICE_PER_PANEL: 435,
+    BATTERY_PRICE_PER_KWH: 505,
+    EMS_PRICE: 700,
+    CHARGER_PRICE: 1100,
+    BE: { YIELD_KWH_PER_KWP: 950, SELF_USE_NO_BAT: 0.28, SELF_USE_BAT: 0.75,
+          AREI_FLUVIUS: 212, BTW_LOW: 0.06, BTW_HIGH: 0.21,
+          SAVINGS_PER_YEAR_HINT: 975, PAYBACK_YEARS: 5.2 },
+    NL: { YIELD_KWH_PER_KWP: 950, SELF_USE_NO_BAT: 0.30, SELF_USE_BAT: 0.75,
+          BTW_BATTERY: 0.00, BTW_PANELS: 0.21,
+          SAVINGS_PER_YEAR_HINT: 975, PAYBACK_YEARS: 5.4 }
+  };
+
+  PRICED = ['zonnepanelen', 'thuisbatterij', 'laadpaal', 'ems'];
+
+  state = {
+    pos: 0,
+    segment: 'particulier',
+    interests: [],
+    answers: {
+      zonnepanelen: { verbruikGeschat: null, jaarverbruikKwh: 3500, daktype: null, batteryReady: null },
+      thuisbatterij: { heeftPanelen: null, gewensteCapaciteitKwh: 5 },
+      laadpaal: { type: null, metZonnepanelen: null },
+      ems: { confirmed: null }
+    },
+    woning: { ouderDan10Jaar: null },
+    market: this.props.defaultMarket || 'BE',
+    notes: '',
+    panelsOverride: null,
+    contact: { naam: '', email: '', telefoon: '', straat: '', postcode: '', gemeente: '' },
+    consent: false
+  };
+
+  // ---- flow helpers ----
+  priced() { return this.PRICED.filter(k => this.state.interests.includes(k)); }
+  has(k) { return this.state.interests.includes(k); }
+  serviceSteps() {
+    const ss = [];
+    const hasZon = this.has('zonnepanelen');
+    const hasBat = this.has('thuisbatterij');
+    const hasLaad = this.has('laadpaal');
+
+    if (hasZon) {
+      ss.push('zon_verbruik', 'zon_dak');
+      if (!hasBat) ss.push('zon_batterij');
+    }
+    if (hasBat) {
+      if (hasZon) ss.push('bat_capaciteit_only');
+      else ss.push('bat_panelen');
+    }
+    if (hasLaad) ss.push('laad_type');
+    if (this.has('ems')) ss.push('ems_confirm');
+    return ss;
+  }
+  qStepKeys() {
+    const ss = this.serviceSteps();
+    const qk = [...ss];
+    if (this.priced().length > 0) {
+      qk.push('woning_land');
+      if (this.state.market === 'BE') qk.push('woning_leeftijd');
+    }
+    return qk;
+  }
+  flow() {
+    const f = ['intro', 'interesse', ...this.serviceSteps()];
+    if (this.priced().length > 0) {
+      f.push('woning_land');
+      if (this.state.market === 'BE') f.push('woning_leeftijd');
+    }
+    f.push('notes', 'result', 'contact', 'confirmation');
+    return f;
+  }
+  curKey() { return this.flow()[this.state.pos] || 'intro'; }
+  go(d) { const f = this.flow(); this.setState(s => ({ pos: Math.max(0, Math.min(f.length - 1, s.pos + d)) })); }
+  goKey(k) { const i = this.flow().indexOf(k); if (i >= 0) this.setState({ pos: i }); }
+  next() { this.go(1); }
+  back() { this.go(-1); }
+
+  toggleInterest(k) {
+    this.setState(s => {
+      const has = s.interests.includes(k);
+      return { interests: has ? s.interests.filter(x => x !== k) : [...s.interests, k] };
+    });
+  }
+  setAnswer(svc, patch) { this.setState(s => ({ answers: { ...s.answers, [svc]: { ...s.answers[svc], ...patch } } })); }
+  setContact(key, val) { this.setState(s => ({ contact: { ...s.contact, [key]: val } })); }
+
+  valid(key) {
+    const a = this.state.answers;
+    switch (key) {
+      case 'interesse': return this.state.interests.length > 0;
+      case 'zon_verbruik': return a.zonnepanelen.verbruikGeschat === true || (a.zonnepanelen.verbruikGeschat === false && Number(a.zonnepanelen.jaarverbruikKwh) > 0);
+      case 'zon_dak': return !!a.zonnepanelen.daktype;
+      case 'zon_batterij': return a.zonnepanelen.batteryReady !== null;
+      case 'bat_capaciteit_only': return a.thuisbatterij.gewensteCapaciteitKwh !== null;
+      case 'bat_panelen': return a.thuisbatterij.heeftPanelen !== null;
+      case 'laad_type': return !!a.laadpaal.type;
+      case 'ems_confirm': return a.ems.confirmed !== null;
+      case 'woning_land': return !!this.state.market;
+      case 'woning_leeftijd': return this.state.woning.ouderDan10Jaar !== null;
+      default: return true;
+    }
+  }
+
+  // ---- formatting ----
+  fmt(n) { return Math.round(n).toLocaleString('nl-NL'); }
+  eur(n) { return '€' + this.fmt(n); }
+  pct(x) { return Math.round(x * 100) + '% btw'; }
+
+  // ---- selection style helpers ----
+  tile(sel) { return { border: sel ? '#22a551' : '#e5e5e5', bg: sel ? 'var(--pp-green-soft)' : '#ffffff', weight: sel ? '700' : '600' }; }
+  opt(label, sel, onClick) { const t = this.tile(sel); return { label, border: t.border, bg: t.bg, weight: t.weight, onClick }; }
+
+  // ===================================================================
+  // estimate engine
+  // ===================================================================
+  computeEstimate() {
+    const C = this.CONSTANTS, S = this.state, M = C[S.market], a = S.answers;
+    const hasZon = this.has('zonnepanelen'), hasBat = this.has('thuisbatterij'),
+          hasLaad = this.has('laadpaal'), hasEms = this.has('ems');
+    const verbruik = Number(a.zonnepanelen.jaarverbruikKwh) || 3500;
+    const defaultPanels = Math.max(1, Math.round(verbruik / ((C.PANEL_WP / 1000) * M.YIELD_KWH_PER_KWP)));
+    const panels = S.panelsOverride != null ? S.panelsOverride : defaultPanels;
+    const kwp = +(panels * C.PANEL_WP / 1000).toFixed(2);
+    const opbrengst = Math.round(kwp * M.YIELD_KWH_PER_KWP);
+
+    let lowApplies, panelBtw, batBtw;
+    if (S.market === 'BE') {
+      lowApplies = S.woning.ouderDan10Jaar !== false;
+      panelBtw = lowApplies ? M.BTW_LOW : M.BTW_HIGH;
+      batBtw = panelBtw;
+    } else {
+      panelBtw = M.BTW_PANELS; batBtw = M.BTW_BATTERY; lowApplies = (M.BTW_BATTERY === 0);
+    }
+    const highBtw = 0.21;
+
+    const items = [];
+    if (hasZon) {
+      items.push({ label: 'Zonnepanelen',
+        sub: `${kwp} kWp · ±${panels} panelen${a.zonnepanelen.batteryReady ? ' · hybride omvormer' : ''} · ${this.pct(panelBtw)}`,
+        amount: panels * C.PRICE_PER_PANEL, btw: panelBtw, lowEligible: true });
+    }
+    if (hasBat) {
+      const cap = Number(a.thuisbatterij.gewensteCapaciteitKwh) || 5;
+      items.push({ label: 'Thuisbatterij', sub: `${cap} kWh bruikbaar · ${this.pct(batBtw)}`,
+        amount: cap * C.BATTERY_PRICE_PER_KWH, btw: batBtw, lowEligible: true });
+    }
+    if (hasLaad) {
+      items.push({ label: 'Laadpaal',
+        sub: `${a.laadpaal.type || '3-fase'}${a.laadpaal.metZonnepanelen ? ' · met zonnepanelen' : ''} · ${this.pct(highBtw)}`,
+        amount: C.CHARGER_PRICE, btw: highBtw, lowEligible: false });
+    }
+    if (hasEms) {
+      items.push({ label: 'EMS (slim energiebeheer)', sub: `vaste add-on · ${this.pct(highBtw)}`,
+        amount: C.EMS_PRICE, btw: highBtw, lowEligible: false });
+    }
+    if (S.market === 'BE' && (hasZon || hasBat)) {
+      items.push({ label: 'AREI-keuring + Fluvius-aanmelding', sub: `verplicht · ${this.pct(M.BTW_HIGH)}`,
+        amount: M.AREI_FLUVIUS, btw: M.BTW_HIGH, lowEligible: false });
+    }
+
+    let excl = 0, btw = 0;
+    items.forEach(it => { excl += it.amount; btw += it.amount * it.btw; });
+    const mid = excl + btw;
+    const low = Math.round(mid * (1 - C.RANGE_MARGIN));
+    const high = Math.round(mid * (1 + C.RANGE_MARGIN));
+
+    let voordeel = 0;
+    if (S.market === 'BE' && lowApplies) {
+      const base = items.filter(i => i.lowEligible).reduce((s, i) => s + i.amount, 0);
+      voordeel = Math.round(base * (M.BTW_HIGH - M.BTW_LOW));
+    } else if (S.market === 'NL') {
+      const base = items.filter(i => i.label === 'Thuisbatterij').reduce((s, i) => s + i.amount, 0);
+      voordeel = Math.round(base * 0.21);
+    }
+
+    const scale = hasZon ? panels / defaultPanels : 1;
+    const perYear = Math.round(M.SAVINGS_PER_YEAR_HINT * scale);
+
+    return { panels, defaultPanels, kwp, opbrengst, excl, btw, total: mid, low, high,
+      voordeel, lowApplies, hasZon, hasBat, items,
+      perYear, perMonth: Math.round(perYear / 12), per25: perYear * 25, payback: M.PAYBACK_YEARS };
+  }
+
+  // ---- POST /api/lead stub (integration seam) ----
+  buildPayload(e) {
+    const S = this.state, c = S.contact;
+    const nameParts = (c.naam || '').trim().split(' ');
+    return {
+      meta: { market: S.market, segment: S.segment, source: 'offerte-widget', submittedAt: new Date().toISOString() },
+      contact: {
+        firstName: nameParts[0] || '', lastName: nameParts.slice(1).join(' ') || '',
+        email: c.email, phone: c.telefoon, street: c.straat,
+        postalCode: c.postcode, city: c.gemeente, consent: S.consent
+      },
+      interests: [...S.interests],
+      answers: S.answers,
+      woning: { ouderDan10Jaar: S.woning.ouderDan10Jaar, btwTarief: e.lowApplies ? (S.market === 'BE' ? 6 : 0) : 21 },
+      notes: S.notes,
+      estimate: {
+        panelen: e.panels, kwp: e.kwp, jaaropbrengstKwh: e.opbrengst,
+        priceLow: e.low, priceMid: e.total, priceHigh: e.high,
+        breakdown: e.items.map(it => ({ label: it.label, amount: it.amount, btw: Math.round(it.btw * 100) })),
+        btwVoordeel: e.voordeel, besparingPerJaar: e.perYear, besparingPerMaand: e.perMonth,
+        besparing25Jaar: e.per25, terugverdientijdJaar: e.payback
+      }
+    };
+  }
+  submit() {
+    const e = this.computeEstimate();
+    const payload = this.buildPayload(e);
+    // Integration seam — replace with: fetch('/api/lead', {method:'POST', body: JSON.stringify(payload)})
+    console.log('POST /api/lead', payload);
+    this.goKey('confirmation');
+  }
+  restart() {
+    this.setState({
+      pos: 0, segment: 'particulier', interests: [],
+      answers: {
+        zonnepanelen: { verbruikGeschat: null, jaarverbruikKwh: 3500, daktype: null, batteryReady: null },
+        thuisbatterij: { heeftPanelen: null, gewensteCapaciteitKwh: 5 },
+        laadpaal: { type: null, metZonnepanelen: null },
+        ems: { confirmed: null }
+      },
+      woning: { ouderDan10Jaar: null }, notes: '', panelsOverride: null,
+      contact: { naam: '', email: '', telefoon: '', straat: '', postcodeGemeente: '' }, consent: false
+    });
+  }
+
+  // ===================================================================
+  // question config
+  // ===================================================================
+  questionConfig(key) {
+    const a = this.state.answers, z = a.zonnepanelen;
+    const base = { eyebrow: '', title: '', subtitle: '', options: [], hasOptions: false,
+      hasSecondary: false, secondaryTitle: '', secondaryOptions: [], secondaryCols: 2,
+      showNumberInput: false, numberValue: '', onNumberChange: null,
+      weetIkNiet: null, hasWeetIkNiet: false, isNotes: false, isWoning: false };
+
+    if (key === 'zon_verbruik') {
+      return { ...base, eyebrow: 'ZONNEPANELEN', title: 'Wat is je jaarlijks elektriciteitsverbruik?',
+        subtitle: 'Je vindt dit op je jaarafrekening of via de Fluvius-app.', hasOptions: true,
+        options: [
+          this.opt('Ja, ik ken het', z.verbruikGeschat === false, () => this.setAnswer('zonnepanelen', { verbruikGeschat: false })),
+          this.opt('Nee, schat voor mij', z.verbruikGeschat === true, () => this.setAnswer('zonnepanelen', { verbruikGeschat: true, jaarverbruikKwh: 3500 }))
+        ],
+        showNumberInput: z.verbruikGeschat === false, numberValue: z.jaarverbruikKwh,
+        onNumberChange: (ev) => this.setAnswer('zonnepanelen', { jaarverbruikKwh: Number(ev.target.value) }) };
+    }
+    if (key === 'zon_dak') {
+      const mk = (lbl, val) => this.opt(lbl, z.daktype === val, () => this.setAnswer('zonnepanelen', { daktype: val }));
+      return { ...base, eyebrow: 'ZONNEPANELEN', title: 'Welk type dak heb je?', subtitle: 'Dit bepaalt de installatiekost per paneel.', hasOptions: true,
+        options: [mk('Pannendak', 'pannendak'), mk('Plat dak', 'plat'), mk('Leien', 'leien'), mk('Ander', 'ander')],
+        hasWeetIkNiet: true, weetIkNiet: { label: 'we rekenen met pannendak (meest voorkomend)', onClick: () => { this.setAnswer('zonnepanelen', { daktype: 'pannendak' }); this.next(); } } };
+    }
+    if (key === 'zon_batterij') {
+      return { ...base, eyebrow: 'ZONNEPANELEN', title: 'Wil je later een thuisbatterij?', subtitle: 'Zo ja, plaatsen we nu een hybride (battery-ready) omvormer.', hasOptions: true,
+        options: [
+          this.opt('Ja, hou rekening', z.batteryReady === true, () => this.setAnswer('zonnepanelen', { batteryReady: true })),
+          this.opt('Nee, niet nodig', z.batteryReady === false, () => this.setAnswer('zonnepanelen', { batteryReady: false }))
+        ],
+        hasWeetIkNiet: true, weetIkNiet: { label: 'we plaatsen een standaard omvormer', onClick: () => { this.setAnswer('zonnepanelen', { batteryReady: false }); this.next(); } } };
+    }
+    if (key === 'bat_capaciteit_only') {
+      const cap = a.thuisbatterij.gewensteCapaciteitKwh;
+      const capOpt = (v) => this.opt(v + ' kWh', cap === v, () => this.setAnswer('thuisbatterij', { gewensteCapaciteitKwh: v }));
+      return { ...base, eyebrow: 'THUISBATTERIJ', title: 'Welke batterijcapaciteit wens je?', subtitle: 'Weet je het niet zeker? Kies 5 kWh als start.', hasOptions: true,
+        options: [capOpt(5), capOpt(10), capOpt(15)] };
+    }
+    if (key === 'bat_panelen') {
+      const cap = a.thuisbatterij.gewensteCapaciteitKwh;
+      const capOpt = (v) => this.opt(v + ' kWh', cap === v, () => this.setAnswer('thuisbatterij', { gewensteCapaciteitKwh: v }));
+      return { ...base, eyebrow: 'THUISBATTERIJ', title: 'Heb je al zonnepanelen?', subtitle: 'Een batterij zonder panelen heeft weinig zin — dan maken we een combi-offerte.', hasOptions: true,
+        options: [
+          this.opt('Ja', a.thuisbatterij.heeftPanelen === true, () => {
+            this.setAnswer('thuisbatterij', { heeftPanelen: true });
+            if (this.has('laadpaal')) this.setAnswer('laadpaal', { metZonnepanelen: true });
+          }),
+          this.opt('Nee, nog niet', a.thuisbatterij.heeftPanelen === false, () => this.setAnswer('thuisbatterij', { heeftPanelen: false }))
+        ],
+        hasSecondary: true, secondaryTitle: 'Gewenste batterij capaciteit (optioneel)', secondaryCols: 3,
+        secondaryOptions: [capOpt(5), capOpt(10), capOpt(15)] };
+    }
+    if (key === 'laad_type') {
+      const hideSolar = this.has('zonnepanelen') || a.thuisbatterij.heeftPanelen === true;
+      const mk = (lbl, val) => this.opt(lbl, a.laadpaal.type === val, () => {
+        this.setAnswer('laadpaal', { type: val });
+        if (hideSolar) this.setAnswer('laadpaal', { metZonnepanelen: true });
+      });
+      return { ...base, eyebrow: 'LAADPAAL', title: 'Welk type laadpaal?', subtitle: 'Niet zeker? Dan rekenen we met 3-fase.', hasOptions: true,
+        options: [mk('1-fase', '1-fase'), mk('3-fase', '3-fase')],
+        hasSecondary: !hideSolar, secondaryTitle: 'Combineren met zonnepanelen?', secondaryCols: 2,
+        secondaryOptions: hideSolar ? [] : [
+          this.opt('Ja', a.laadpaal.metZonnepanelen === true, () => this.setAnswer('laadpaal', { metZonnepanelen: true })),
+          this.opt('Nee', a.laadpaal.metZonnepanelen === false, () => this.setAnswer('laadpaal', { metZonnepanelen: false }))
+        ],
+        hasWeetIkNiet: true, weetIkNiet: { label: 'we rekenen met 3-fase', onClick: () => {
+          this.setAnswer('laadpaal', { type: '3-fase' });
+          if (hideSolar) this.setAnswer('laadpaal', { metZonnepanelen: true });
+          this.next();
+        } } };
+    }
+    if (key === 'ems_confirm') {
+      return { ...base, eyebrow: 'EMS', title: 'Wil je je verbruik automatisch sturen?', subtitle: 'Batterij, laadpaal en dynamisch tarief slim op elkaar afgestemd.', hasOptions: true,
+        options: [
+          this.opt('Ja, graag', a.ems.confirmed === true, () => this.setAnswer('ems', { confirmed: true })),
+          this.opt('Vertel me meer', a.ems.confirmed === 'meer', () => this.setAnswer('ems', { confirmed: 'meer' }))
+        ] };
+    }
+    if (key === 'woning_land') {
+      return { ...base, eyebrow: 'JOUW LOCATIE', title: 'Waar bevindt je woning zich?', subtitle: 'We berekenen de juiste premies en btw-tarieven voor jouw regio.', hasOptions: true,
+        options: [
+          this.opt('🇧🇪 België', this.state.market === 'BE', () => this.setState({ market: 'BE' })),
+          this.opt('🇳🇱 Nederland', this.state.market === 'NL', () => this.setState({ market: 'NL' }))
+        ] };
+    }
+    if (key === 'woning_leeftijd') {
+      const beNote = 'Bij een woning ouder dan 10 jaar geldt 6% btw i.p.v. 21% — dat scheelt flink.';
+      return { ...base, eyebrow: 'JE WONING', title: 'Hoe oud is je woning?', subtitle: beNote, hasOptions: true,
+        options: [
+          this.opt('Ouder dan 10 jaar', this.state.woning.ouderDan10Jaar === true, () => this.setState({ woning: { ouderDan10Jaar: true } })),
+          this.opt('10 jaar of jonger', this.state.woning.ouderDan10Jaar === false, () => this.setState({ woning: { ouderDan10Jaar: false } }))
+        ],
+        hasWeetIkNiet: true, weetIkNiet: { label: 'we rekenen met ouder dan 10 jaar (6% btw)', onClick: () => { this.setState({ woning: { ouderDan10Jaar: true } }); this.next(); } } };
+    }
+    if (key === 'notes') {
+      return { ...base, eyebrow: 'LAATSTE STAP', title: 'Nog iets dat we moeten weten?', subtitle: 'Optioneel — hoe meer je deelt, hoe nauwkeuriger je offerte.', isNotes: true };
+    }
+    return base;
+  }
+
+  // ===================================================================
+  renderVals() {
+    const S = this.state, ck = this.curKey(), flow = this.flow();
+    const isIntro = ck === 'intro', isInteresse = ck === 'interesse',
+          isResult = ck === 'result', isContact = ck === 'contact', isConfirmation = ck === 'confirmation';
+    const questionKeys = ['zon_verbruik', 'zon_dak', 'zon_batterij', 'bat_panelen', 'bat_capaciteit_only', 'laad_type', 'ems_confirm', 'woning_land', 'woning_leeftijd', 'notes'];
+    const isQuestion = questionKeys.includes(ck);
+
+    // top progress (5 segments of overall progress)
+    const resultIdx = Math.max(1, flow.indexOf('result'));
+    const filled = S.pos >= resultIdx ? 5 : Math.min(5, Math.max(0, Math.round(S.pos / resultIdx * 5)));
+    const topSegs = [0, 1, 2, 3, 4].map(i => ({ bg: i < filled ? 'var(--pp-green)' : '#e8eaed' }));
+
+    // labelled per-question progress
+    const qKeys = this.qStepKeys();
+    const qIndex = qKeys.indexOf(ck) + 1;
+    const showQLabeled = qIndex > 0;
+    const qTotal = qKeys.length;
+    const nameMap = { zon_verbruik: 'Zonnepanelen', zon_dak: 'Zonnepanelen', zon_batterij: 'Zonnepanelen', bat_panelen: 'Thuisbatterij', bat_capaciteit_only: 'Thuisbatterij', laad_type: 'Laadpaal', ems_confirm: 'EMS', woning_land: 'Locatie', woning_leeftijd: 'Je woning' };
+    const qServiceName = nameMap[ck] || '';
+    const qSegs = qKeys.map((_, i) => ({ bg: i < qIndex ? 'var(--pp-green)' : '#e8eaed' }));
+
+    // segment tiles (intro)
+    const sp = this.tile(S.segment === 'particulier'), sb = this.tile(S.segment === 'bedrijf');
+    const segPart = { ...sp, onClick: () => this.setState({ segment: 'particulier' }) };
+    const segBiz = { ...sb, onClick: () => this.setState({ segment: 'bedrijf' }) };
+
+    // interest tiles
+    const intr = {};
+    ['zonnepanelen', 'thuisbatterij', 'laadpaal', 'ems', 'warmtepomp', 'warmtepompboiler', 'airco', 'iets_anders'].forEach(k => {
+      const t = this.tile(this.has(k));
+      intr[k] = { ...t, onClick: () => this.toggleInterest(k) };
+    });
+
+    // question config
+    const q = isQuestion ? this.questionConfig(ck) : { eyebrow: '', title: '', subtitle: '', options: [], hasOptions: false, hasSecondary: false, showNumberInput: false, hasWeetIkNiet: false, isNotes: false, isWoning: false };
+
+    // footer nav
+    const showFooterNav = isInteresse || isQuestion;
+    const nextDisabled = !this.valid(ck);
+    const nextLabel = (ck === 'woning_leeftijd' || ck === 'woning_land') ? 'Bijna klaar' : ck === 'notes' ? 'Bereken mijn offerte' : 'Volgende';
+    const nextSparkle = ck === 'notes';
+
+    // result
+    const isVerwarmingOnly = this.priced().length === 0 && S.interests.length > 0;
+    const hasPricing = !isVerwarmingOnly && this.priced().length > 0;
+    const verwarmingLabels = { warmtepomp: 'Warmtepomp', warmtepompboiler: 'Warmtepompboiler', airco: 'Airco', iets_anders: 'Iets anders' };
+    const verwarmingChips = Object.keys(verwarmingLabels).filter(k => this.has(k)).map(k => verwarmingLabels[k]);
+    const hasVerwarmingExtra = hasPricing && verwarmingChips.length > 0;
+    const verwarmingExtraNote = hasVerwarmingExtra ? `${verwarmingChips.join(', ')} bespreken we tijdens je plaatsbezoek.` : '';
+
+    let r = {};
+    if (isResult && hasPricing) {
+      const e = this.computeEstimate();
+      r = {
+        low: this.eur(e.low), high: this.eur(e.high),
+        voordeel: this.eur(e.voordeel), hasVoordeel: e.voordeel > 0,
+        btwNote: S.market === 'BE'
+          ? `Aan ${e.lowApplies ? '6' : '21'}% btw i.p.v. 21% — al verrekend in de prijs hierboven.`
+          : '0% btw op je thuisbatterij — al verrekend in de prijs hierboven.',
+        breakdown: e.items.map(it => ({ label: it.label, sub: it.sub, amount: this.eur(it.amount) })),
+        excl: this.eur(e.excl), btw: this.eur(e.btw), total: this.eur(e.total),
+        hasZon: e.hasZon, panels: e.panels + ' panelen', kwp: e.kwp + ' kWp',
+        opbrengst: '± ' + this.fmt(e.opbrengst) + ' kWh/jaar',
+        per25: '± ' + this.eur(e.per25) + ' over 25 jaar',
+        perMonth: this.eur(e.perMonth), perYear: this.eur(e.perYear),
+        payback: '± ' + String(e.payback).replace('.', ',') + ' j',
+        savingsCaption: `Indicatief, geen belofte. Gerekend op ± ${this.fmt(Number(S.answers.zonnepanelen.jaarverbruikKwh) || 3500)} kWh/jaar.`,
+        sliderMin: 4, sliderMax: 24, sliderVal: e.panels,
+        inbegrepen: ['10 jaar garantie', S.market === 'BE' ? 'AREI-keuring & Fluvius' : 'Keuring & netaanmelding', 'Premiebegeleiding', 'Monitoring-app']
+      };
+    }
+
+    // contact
+    const contactFields = [
+      { placeholder: 'Voor- en Achternaam', value: S.contact.naam, type: 'text', onChange: (ev) => this.setContact('naam', ev.target.value) },
+      { placeholder: 'E-mailadres', value: S.contact.email, type: 'email', onChange: (ev) => this.setContact('email', ev.target.value) },
+      { placeholder: 'Telefoonnummer', value: S.contact.telefoon, type: 'tel', onChange: (ev) => this.setContact('telefoon', ev.target.value) },
+      { placeholder: 'Straat en huisnummer', value: S.contact.straat, type: 'text', onChange: (ev) => this.setContact('straat', ev.target.value) },
+      { placeholder: 'Postcode', value: S.contact.postcode, type: 'text', onChange: (ev) => this.setContact('postcode', ev.target.value) },
+      { placeholder: 'Gemeente', value: S.contact.gemeente, type: 'text', onChange: (ev) => this.setContact('gemeente', ev.target.value) }
+    ];
+    const submitDisabled = !(S.contact.naam && S.contact.email && S.contact.telefoon && S.consent);
+
+    return {
+      // screen flags
+      isIntro, isInteresse, isQuestion, isResult, isContact, isConfirmation,
+      showProgress: ck !== 'confirmation',
+      // progress
+      topSegs, showQLabeled, qIndex, qTotal, qServiceName, qSegs,
+      // intro
+      heroBg: (this.props.heroGradient ?? true) ? 'linear-gradient(150deg,#22a551 0%,#177238 100%)' : '#22a551',
+      segPart, segBiz,
+      // interesse
+      intr,
+      // question
+      q, notesValue: String(S.notes || ''),
+      onNotes: (ev) => this.setState({ notes: ev.target.value }),
+      onPanels: (ev) => this.setState({ panelsOverride: Number(ev.target.value) }),
+      // result
+      isVerwarmingOnly, hasPricing, verwarmingChips, hasVerwarmingExtra, verwarmingExtraNote, r,
+      onToContact: () => this.goKey('contact'),
+      onRestart: () => this.restart(),
+      // contact
+      contactFields, onToggleConsent: () => this.setState(s => ({ consent: !s.consent })),
+      consentBorder: S.consent ? '#22a551' : '#cccccc', consentBg: S.consent ? '#22a551' : '#ffffff', consentCheck: S.consent ? 1 : 0,
+      onSubmit: () => this.submit(),
+      submitDisabled, submitBg: submitDisabled ? '#eceef1' : 'var(--pp-green)', submitColor: submitDisabled ? '#9aa0a6' : '#ffffff', submitCursor: submitDisabled ? 'not-allowed' : 'pointer',
+      // footer nav
+      showFooterNav, nextDisabled, nextLabel, nextSparkle,
+      nextBg: nextDisabled ? '#eceef1' : 'var(--pp-green)', nextColor: nextDisabled ? '#9aa0a6' : '#ffffff', nextCursor: nextDisabled ? 'not-allowed' : 'pointer',
+      onNext: () => this.next(), onBack: () => this.back()
+    };
+  }
+}
+</script>
+</body>
+
+</html>
