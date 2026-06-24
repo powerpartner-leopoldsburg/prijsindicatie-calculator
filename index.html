@@ -31,34 +31,38 @@
         textarea::placeholder {
           color: #9aa0a6;
         }
+
+        :root {
+          --pp-green-soft: #eef8f2;
+        }
       </style>
     </helmet>
 
     <div
-      style="min-height:100vh; background:#f5f6f8; display:flex; flex-direction:column; align-items:center; padding:32px 16px; font-family:Montserrat,-apple-system,sans-serif; -webkit-font-smoothing:antialiased;">
+      style="min-height:100vh; background:#f5f6f8; display:flex; flex-direction:column; align-items:center; padding:20px 12px; font-family:Montserrat,-apple-system,sans-serif; -webkit-font-smoothing:antialiased;">
       <div
-        style="width:100%; max-width:600px; background:#ffffff; border-radius:24px; box-shadow:0 1px 3px rgba(26,26,26,.05), 0 10px 36px rgba(26,26,26,.06); overflow:hidden;">
+        style="width:100%; max-width:675px; background:#ffffff; border-radius:20px; box-shadow:0 1px 4px rgba(26,26,26,.07), 0 8px 28px rgba(26,26,26,.11); overflow:hidden;">
 
         <!-- Header -->
         <div
-          style="display:flex; align-items:center; justify-content:space-between; padding:20px 28px; border-bottom:1px solid #eef0f2;">
+          style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid #eef0f2;">
           <div style="display:flex; align-items:center;">
             <img src="https://assets.cdn.filesafe.space/dv35VrvNw6c4zSIIERee/media/69ac321436702f81623e4a30.svg"
-              alt="PowerPartner" style="height:38px;">
+              alt="PowerPartner" style="height:32px;">
           </div>
           <span
-            style="background:var(--pp-green-soft); color:var(--pp-green); font-size:14px; font-weight:700; padding:7px 16px; border-radius:999px;">Prijsindicatie</span>
+            style="background:var(--pp-green-soft); color:var(--pp-green); font-size:13px; font-weight:700; padding:7px 16px; border-radius:999px;">Prijsindicatie</span>
         </div>
 
         <!-- Trust row -->
         <div
-          style="display:flex; align-items:center; justify-content:space-between; padding:13px 28px; border-bottom:1px solid #eef0f2;">
+          style="display:flex; align-items:center; justify-content:space-between; padding:10px 22px; border-bottom:1px solid #eef0f2;">
           <div style="display:flex; align-items:center; gap:9px;">
-            <span style="color:var(--pp-green); font-size:17px; letter-spacing:1px;">★★★★★</span>
-            <span style="font-size:15px; font-weight:700; color:#1a1a1a;">5/5</span>
-            <span style="font-size:15px; color:#9aa0a6;">· 53 reviews</span>
+            <span style="color:var(--pp-green); font-size:13px; letter-spacing:1px;">★★★★★</span>
+            <span style="font-size:13px; font-weight:700; color:#1a1a1a;">5/5</span>
+            <span style="font-size:12px; color:#9aa0a6;">· 53 reviews</span>
           </div>
-          <span style="font-size:15px; color:#9aa0a6;">Gratis &amp; vrijblijvend</span>
+          <span style="font-size:12px; color:#9aa0a6;">Gratis &amp; vrijblijvend</span>
         </div>
 
         <!-- Progress -->
@@ -72,8 +76,8 @@
             <sc-if value="{{ showQLabeled }}" hint-placeholder-val="{{ false }}">
               <div style="margin-top:18px;">
                 <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px;">
-                  <span style="font-size:14px; color:#9aa0a6;">Stap {{ qIndex }}/{{ qTotal }}</span>
-                  <span style="font-size:14px; font-weight:700; color:var(--pp-green);">{{ qServiceName }}</span>
+                  <span style="font-size:13px; color:#9aa0a6;">Stap {{ qIndex }}/{{ qTotal }}</span>
+                  <span style="font-size:13px; font-weight:700; color:var(--pp-green);">{{ qServiceName }}</span>
                 </div>
                 <div style="display:flex; gap:7px;">
                   <sc-for list="{{ qSegs }}" as="s" hint-placeholder-count="5">
@@ -87,11 +91,11 @@
 
         <!-- ============ STEP 0 — INTRO ============ -->
         <sc-if value="{{ isIntro }}" hint-placeholder-val="{{ true }}">
-          <div style="padding:24px 28px 8px;">
-            <div style="border-radius:18px; padding:30px 30px 26px; color:#ffffff; background:{{ heroBg }};">
+          <div style="padding:18px 20px 8px;">
+            <div style="border-radius:16px; padding:24px 24px 20px; color:#ffffff; background:{{ heroBg }};">
               <div style="display:flex; justify-content:flex-end;">
                 <span
-                  style="display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.18); padding:7px 14px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:0.08em;">
+                  style="display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.18); padding:7px 14px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.08em;">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path>
@@ -100,33 +104,33 @@
                 </span>
               </div>
               <div
-                style="font-size:33px; font-weight:700; line-height:1.12; letter-spacing:-0.02em; margin:8px 0 14px;">
+                style="font-size:20px; font-weight:700; line-height:1.15; letter-spacing:-0.02em; margin:8px 0 12px;">
                 Jouw persoonlijke prijsindicatie <span style="font-weight:400; opacity:.92;">in enkele minuten.</span>
               </div>
-              <div style="font-size:17px; line-height:1.5; opacity:.95;">Een echte indicatie op maat, gebaseerd op je
+              <div style="font-size:13px; line-height:1.5; opacity:.95;">Een echte indicatie op maat, gebaseerd op je
                 verbruik, woning en situatie.</div>
               <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;">
                 <span
-                  style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.18); padding:9px 15px; border-radius:999px; font-size:14px; font-weight:700;"><svg
+                  style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.18); padding:9px 15px; border-radius:999px; font-size:13px; font-weight:700;"><svg
                     width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Eerlijke prijsindicatie</span>
                 <span
-                  style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.18); padding:9px 15px; border-radius:999px; font-size:14px; font-weight:700;"><svg
+                  style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.18); padding:9px 15px; border-radius:999px; font-size:13px; font-weight:700;"><svg
                     width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Afgestemd op je situatie</span>
                 <span
-                  style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.18); padding:9px 15px; border-radius:999px; font-size:14px; font-weight:700;"><svg
+                  style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.18); padding:9px 15px; border-radius:999px; font-size:13px; font-weight:700;"><svg
                     width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Gratis &amp; vrijblijvend</span>
               </div>
               <div style="height:1px; background:rgba(255,255,255,.22); margin:22px 0 16px;"></div>
-              <div style="display:flex; align-items:center; gap:9px; font-size:15px; font-weight:600;">
+              <div style="display:flex; align-items:center; gap:9px; font-size:13px; font-weight:600;">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>
@@ -137,41 +141,41 @@
             </div>
 
             <div style="margin-top:26px;">
-              <div style="font-size:19px; font-weight:700; color:#1a1a1a; margin-bottom:13px;">Voor wie is de
+              <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin-bottom:11px;">Voor wie is de
                 prijsindicatie?
               </div>
               <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
                 <button onClick="{{ segPart.onClick }}"
-                  style="padding:20px; border-radius:12px; border:2px solid {{ segPart.border }}; background:{{ segPart.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:16px; font-weight:{{ segPart.weight }}; cursor:pointer; transition:all 150ms;"
+                  style="padding:20px; border-radius:12px; border:1px solid {{ segPart.border }}; background:{{ segPart.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:13px; font-weight:{{ segPart.weight }}; cursor:pointer; transition:all 150ms;"
                   style-hover="border-color:#22a551;">Particulier</button>
                 <button onClick="{{ segBiz.onClick }}"
-                  style="padding:20px; border-radius:12px; border:2px solid {{ segBiz.border }}; background:{{ segBiz.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:16px; font-weight:{{ segBiz.weight }}; cursor:pointer; transition:all 150ms;"
+                  style="padding:20px; border-radius:12px; border:1px solid {{ segBiz.border }}; background:{{ segBiz.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:13px; font-weight:{{ segBiz.weight }}; cursor:pointer; transition:all 150ms;"
                   style-hover="border-color:#22a551;">Bedrijf</button>
               </div>
             </div>
 
-            <div style="margin-top:22px; background:var(--pp-green-soft); border-radius:14px; padding:22px 24px;">
+            <div style="margin-top:18px; background:var(--pp-green-soft); border-radius:14px; padding:18px 20px;">
               <div
-                style="font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--pp-green); margin-bottom:14px;">
+                style="font-size:12px; font-weight:700; letter-spacing:0.04em; color:var(--pp-green); margin-bottom:14px;">
                 Waarom Powerpartner?</div>
               <div style="display:flex; flex-direction:column; gap:13px;">
-                <div style="display:flex; align-items:center; gap:11px; font-size:16px; color:#1a1a1a;"><svg width="18"
-                    height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                <div style="display:flex; align-items:center; gap:11px; font-size:13px; color:#1a1a1a;"><svg width="16"
+                    height="16" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>1550+ installaties &amp; 9+ jaar ervaring</div>
-                <div style="display:flex; align-items:center; gap:11px; font-size:16px; color:#1a1a1a;"><svg width="18"
-                    height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                <div style="display:flex; align-items:center; gap:11px; font-size:13px; color:#1a1a1a;"><svg width="16"
+                    height="16" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Vaste prijs, geen verrassingen</div>
-                <div style="display:flex; align-items:center; gap:11px; font-size:16px; color:#1a1a1a;"><svg width="18"
-                    height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                <div style="display:flex; align-items:center; gap:11px; font-size:13px; color:#1a1a1a;"><svg width="16"
+                    height="16" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Onafhankelijk, top kwaliteit, geen vendor lock-in</div>
-                <div style="display:flex; align-items:center; gap:11px; font-size:16px; color:#1a1a1a;"><svg width="18"
-                    height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
+                <div style="display:flex; align-items:center; gap:11px; font-size:13px; color:#1a1a1a;"><svg width="16"
+                    height="16" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Gratis energie-advies aan huis</div>
@@ -179,28 +183,28 @@
             </div>
 
             <button onClick="{{ onNext }}"
-              style="margin-top:24px; width:100%; padding:18px 24px; background:var(--pp-green); color:#fff; border:none; border-radius:12px; font-family:Montserrat; font-size:17px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;"
+              style="margin-top:24px; width:100%; padding:18px 24px; background:var(--pp-green); color:#fff; border:none; border-radius:12px; font-family:Montserrat; font-size:13px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;"
               style-hover="background:var(--pp-green-hover);">Start mijn prijsindicatie <span
-                style="font-size:19px;">→</span></button>
+                style="font-size:16px;">→</span></button>
           </div>
         </sc-if>
 
         <!-- ============ INTERESSE ============ -->
         <sc-if value="{{ isInteresse }}" hint-placeholder-val="{{ false }}">
-          <div style="padding:24px 28px 8px;">
-            <div style="font-size:27px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Waarin heb je
+          <div style="padding:18px 20px 8px;">
+            <div style="font-size:15px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Waarin heb je
               interesse?</div>
-            <div style="font-size:16px; color:#6b7178; margin-top:7px;">Kies één of meerdere. Per product stellen we
+            <div style="font-size:13px; color:#6b7178; margin-top:6px;">Kies één of meerdere. Per product stellen we
               daarna enkele korte vragen.</div>
 
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#9aa0a6; margin:24px 0 12px;">
+            <div style="font-size:10px; font-weight:700; letter-spacing:0.06em; color:#9aa0a6; margin:18px 0 9px;">
               ENERGIE-OPWEKKING &amp; OPSLAG</div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px;">
               <button onClick="{{ intr.zonnepanelen.onClick }}"
-                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.zonnepanelen.border }}; background:{{ intr.zonnepanelen.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.zonnepanelen.border }}; background:{{ intr.zonnepanelen.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
                 <span
-                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
                     width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="4"></circle>
@@ -209,114 +213,114 @@
                     </path>
                   </svg></span>
                 <span><span
-                    style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Zonnepanelen</span><span
-                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Bespaar met je eigen
+                    style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Zonnepanelen</span><span
+                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Bespaar met je eigen
                     zonne-energie</span></span>
               </button>
               <button onClick="{{ intr.thuisbatterij.onClick }}"
-                style="position:relative; text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.thuisbatterij.border }}; background:{{ intr.thuisbatterij.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style="position:relative; text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.thuisbatterij.border }}; background:{{ intr.thuisbatterij.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
                 <span
-                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
                     width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="7" width="16" height="10" rx="2"></rect>
                     <line x1="22" y1="11" x2="22" y2="13"></line>
                   </svg></span>
-                <span><span
-                    style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Thuisbatterij</span><span
-                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Haal meer rendement uit je
+                <span style="padding-right:46px;"><span
+                    style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Thuisbatterij</span><span
+                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Haal meer rendement uit je
                     panelen</span></span>
                 <span
-                  style="position:absolute; top:14px; right:14px; background:var(--pp-green-soft); color:var(--pp-green); font-size:12px; font-weight:700; padding:3px 10px; border-radius:999px;">Populair</span>
+                  style="position:absolute; top:9px; right:9px; background:var(--pp-green-soft); color:var(--pp-green); font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px;">Populair</span>
               </button>
               <button onClick="{{ intr.laadpaal.onClick }}"
-                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.laadpaal.border }}; background:{{ intr.laadpaal.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.laadpaal.border }}; background:{{ intr.laadpaal.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
                 <span
-                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
                     width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                   </svg></span>
-                <span><span style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Laadpaal</span><span
-                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Laad je wagen thuis met
+                <span><span style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Laadpaal</span><span
+                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Laad je wagen thuis met
                     zonne-energie</span></span>
               </button>
               <button onClick="{{ intr.ems.onClick }}"
-                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.ems.border }}; background:{{ intr.ems.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.ems.border }}; background:{{ intr.ems.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
                 <span
-                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
                     width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                   </svg></span>
-                <span><span style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">EMS</span><span
-                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Slim energiebeheer &amp;
+                <span><span style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">EMS</span><span
+                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Slim energiebeheer &amp;
                     sturing</span></span>
               </button>
             </div>
 
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#9aa0a6; margin:26px 0 12px;">
+            <div style="font-size:10px; font-weight:700; letter-spacing:0.06em; color:#9aa0a6; margin:16px 0 9px;">
               VERWARMING &amp; WATER</div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px;">
               <button onClick="{{ intr.warmtepomp.onClick }}"
-                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.warmtepomp.border }}; background:{{ intr.warmtepomp.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.warmtepomp.border }}; background:{{ intr.warmtepomp.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
                 <span
-                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
                     width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4 4 0 1 0 5 0z"></path>
                   </svg></span>
                 <span><span
-                    style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Warmtepomp</span><span
-                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Verwarm zuinig en zonder
+                    style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Warmtepomp</span><span
+                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Verwarm zuinig en zonder
                     gas</span></span>
               </button>
               <button onClick="{{ intr.warmtepompboiler.onClick }}"
-                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.warmtepompboiler.border }}; background:{{ intr.warmtepompboiler.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.warmtepompboiler.border }}; background:{{ intr.warmtepompboiler.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
                 <span
-                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
                     width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
                   </svg></span>
                 <span><span
-                    style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Warmtepompboiler</span><span
-                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Tot 75% zuiniger warm
+                    style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Warmtepompboiler</span><span
+                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Tot 75% zuiniger warm
                     water</span></span>
               </button>
               <button onClick="{{ intr.airco.onClick }}"
-                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.airco.border }}; background:{{ intr.airco.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.airco.border }}; background:{{ intr.airco.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
                 <span
-                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
                     width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path
                       d="M9.59 4.59A2 2 0 1 1 11 8H2M12.59 19.41A2 2 0 1 0 14 16H2M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2">
                     </path>
                   </svg></span>
-                <span><span style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Airco</span><span
-                    style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Koelen in de zomer, verwarmen
+                <span><span style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Airco</span><span
+                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Koelen in de zomer, verwarmen
                     in de winter</span></span>
               </button>
               <button onClick="{{ intr.iets_anders.onClick }}"
-                style="text-align:left; padding:18px; border-radius:14px; border:2px solid {{ intr.iets_anders.border }}; background:{{ intr.iets_anders.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
+                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.iets_anders.border }}; background:{{ intr.iets_anders.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
                 <span
-                  style="flex:none; width:42px; height:42px; border-radius:10px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
+                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
                     width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                     <line x1="12" y1="17" x2="12.01" y2="17"></line>
                   </svg></span>
-                <span><span style="display:block; font-size:16px; font-weight:700; color:#1a1a1a;">Iets
-                    anders</span><span style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">Vertel ons
+                <span><span style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Iets
+                    anders</span><span style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Vertel ons
                     wat je zoekt</span></span>
               </button>
             </div>
@@ -325,25 +329,25 @@
 
         <!-- ============ GENERIC QUESTION ============ -->
         <sc-if value="{{ isQuestion }}" hint-placeholder-val="{{ false }}">
-          <div style="padding:22px 28px 8px;">
+          <div style="padding:18px 20px 8px;">
             <span
-              style="display:inline-flex; align-items:center; gap:7px; background:var(--pp-green-soft); color:var(--pp-green); padding:7px 14px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:0.06em;">
+              style="display:inline-flex; align-items:center; gap:7px; background:var(--pp-green-soft); color:var(--pp-green); padding:6px 12px; border-radius:999px; font-size:10px; font-weight:700; letter-spacing:0.06em;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path>
               </svg>
               {{ q.eyebrow }}
             </span>
-            <div style="font-size:25px; font-weight:700; color:#1a1a1a; margin:15px 0 6px; letter-spacing:-0.01em;">{{
+            <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:10px 0 4px; letter-spacing:-0.01em;">{{
               q.title }}</div>
-            <div style="font-size:16px; color:#6b7178; margin-bottom:22px;">{{ q.subtitle }}</div>
+            <div style="font-size:13px; color:#6b7178; margin-bottom:18px;">{{ q.subtitle }}</div>
 
 
 
             <sc-if value="{{ q.isNotes }}" hint-placeholder-val="{{ false }}">
               <textarea value="{{ notesValue }}" onChange="{{ onNotes }}"
                 placeholder="Bv. specifieke wensen of een vraag"
-                style="width:100%; min-height:120px; padding:16px; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:16px; color:#1a1a1a; resize:vertical;"
+                style="width:100%; min-height:120px; padding:16px; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:14px; color:#1a1a1a; resize:vertical;"
                 style-focus="outline:none; border-color:#22a551; box-shadow:var(--shadow-focus);"></textarea>
             </sc-if>
 
@@ -351,7 +355,7 @@
               <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
                 <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="2">
                   <button onClick="{{ opt.onClick }}"
-                    style="text-align:center; padding:22px 14px; border-radius:12px; border:2px solid {{ opt.border }}; background:{{ opt.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:16px; font-weight:{{ opt.weight }}; cursor:pointer; transition:all 150ms;"
+                    style="text-align:center; padding:16px 12px; border-radius:12px; border:1px solid {{ opt.border }}; background:{{ opt.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:12px; font-weight:{{ opt.weight }}; cursor:pointer; transition:all 150ms;"
                     style-hover="border-color:#22a551;">{{ opt.label }}</button>
                 </sc-for>
               </div>
@@ -359,22 +363,22 @@
 
             <sc-if value="{{ q.showNumberInput }}" hint-placeholder-val="{{ false }}">
               <div style="margin-top:18px;">
-                <label style="display:block; font-size:14px; color:#6b7178; margin-bottom:8px;">Jaarverbruik
+                <label style="display:block; font-size:13px; color:#6b7178; margin-bottom:8px;">Jaarverbruik
                   (kWh)</label>
                 <input type="number" value="{{ q.numberValue }}" onChange="{{ q.onNumberChange }}"
-                  style="width:100%; padding:16px; border:2px solid #22a551; border-radius:12px; font-family:Montserrat; font-size:17px; color:#1a1a1a;"
+                  style="width:100%; padding:16px; border:2px solid #22a551; border-radius:12px; font-family:Montserrat; font-size:15px; color:#1a1a1a;"
                   style-focus="outline:none; box-shadow:var(--shadow-focus);">
               </div>
             </sc-if>
 
             <sc-if value="{{ q.hasSecondary }}" hint-placeholder-val="{{ false }}">
               <div style="margin-top:22px;">
-                <div style="font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:12px;">{{ q.secondaryTitle }}
+                <div style="font-size:13px; font-weight:700; color:#1a1a1a; margin-bottom:10px;">{{ q.secondaryTitle }}
                 </div>
                 <div style="display:grid; grid-template-columns:repeat({{ q.secondaryCols }}, 1fr); gap:12px;">
                   <sc-for list="{{ q.secondaryOptions }}" as="opt" hint-placeholder-count="2">
                     <button onClick="{{ opt.onClick }}"
-                      style="text-align:center; padding:16px 12px; border-radius:12px; border:2px solid {{ opt.border }}; background:{{ opt.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:15px; font-weight:{{ opt.weight }}; cursor:pointer; transition:all 150ms;"
+                      style="text-align:center; padding:13px 10px; border-radius:12px; border:1px solid {{ opt.border }}; background:{{ opt.bg }}; color:#1a1a1a; font-family:Montserrat; font-size:11px; font-weight:{{ opt.weight }}; cursor:pointer; transition:all 150ms;"
                       style-hover="border-color:#22a551;">{{ opt.label }}</button>
                   </sc-for>
                 </div>
@@ -390,7 +394,7 @@
                   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                   <line x1="12" y1="17" x2="12.01" y2="17"></line>
                 </svg>
-                <span style="font-size:15px; color:#9aa0a6;">Weet ik niet — <span
+                <span style="font-size:13px; color:#9aa0a6;">Weet ik niet — <span
                     style="color:var(--pp-green); font-weight:700;">{{ q.weetIkNiet.label }}</span></span>
               </button>
             </sc-if>
@@ -401,18 +405,18 @@
         <sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
           <div style="padding:24px 28px 8px;">
             <sc-if value="{{ isVerwarmingOnly }}" hint-placeholder-val="{{ false }}">
-              <div style="font-size:25px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">We maken je indicatie
+              <div style="font-size:20px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">We maken je indicatie
                 op maat</div>
-              <div style="font-size:16px; color:#6b7178; margin-top:10px; line-height:1.5;">Voor warmtepomp, boiler en
+              <div style="font-size:14px; color:#6b7178; margin-top:10px; line-height:1.5;">Voor warmtepomp, boiler en
                 airco hangt de prijs sterk af van je woning. We maken je indicatie op maat tijdens een gratis
                 adviesgesprek.</div>
               <div style="margin-top:20px; background:var(--pp-green-soft); border-radius:14px; padding:20px;">
                 <div
-                  style="font-size:13px; font-weight:700; letter-spacing:0.04em; color:var(--pp-green); margin-bottom:12px;">
+                  style="font-size:12px; font-weight:700; letter-spacing:0.04em; color:var(--pp-green); margin-bottom:12px;">
                   JE INTERESSE</div>
                 <sc-for list="{{ verwarmingChips }}" as="c" hint-placeholder-count="2">
                   <div
-                    style="display:flex; align-items:center; gap:10px; font-size:16px; color:#1a1a1a; padding:5px 0;">
+                    style="display:flex; align-items:center; gap:10px; font-size:14px; color:#1a1a1a; padding:5px 0;">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
                       stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="20 6 9 17 4 12"></polyline>
@@ -423,11 +427,11 @@
             </sc-if>
 
             <sc-if value="{{ hasPricing }}" hint-placeholder-val="{{ true }}">
-              <div style="font-size:16px; color:#9aa0a6;">Prijs indicatie</div>
+              <div style="font-size:14px; color:#9aa0a6;">Prijs indicatie</div>
               <div
-                style="font-size:42px; font-weight:700; color:#1a1a1a; letter-spacing:-0.02em; line-height:1.05; margin-top:4px;">
+                style="font-size:35px; font-weight:700; color:#1a1a1a; letter-spacing:-0.02em; line-height:1.05; margin-top:4px;">
                 {{ r.low }} – {{ r.high }}</div>
-              <div style="font-size:15px; color:#9aa0a6; margin-top:8px;">incl. btw · richtprijs, definitief na
+              <div style="font-size:13px; color:#9aa0a6; margin-top:8px;">incl. btw · richtprijs, definitief na
                 adviesgesprek</div>
 
               <sc-if value="{{ r.hasVoordeel }}" hint-placeholder-val="{{ true }}">
@@ -439,9 +443,9 @@
                       stroke-linecap="round" stroke-linejoin="round">
                       <path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"></path>
                     </svg></span>
-                  <span><span style="display:block; font-size:17px; font-weight:700; color:var(--pp-green);">Je bespaart
+                  <span><span style="display:block; font-size:15px; font-weight:700; color:var(--pp-green);">Je bespaart
                       ± {{ r.voordeel }} aan btw</span><span
-                      style="display:block; font-size:14px; color:#5a8a6c; margin-top:3px;">{{ r.btwNote
+                      style="display:block; font-size:13px; color:#5a8a6c; margin-top:3px;">{{ r.btwNote
                       }}</span></span>
                 </div>
               </sc-if>
@@ -451,23 +455,23 @@
                 <sc-for list="{{ r.breakdown }}" as="b" hint-placeholder-count="2">
                   <div
                     style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:18px 20px; border-bottom:1px solid #f0f1f3;">
-                    <span><span style="display:block; font-size:17px; font-weight:700; color:#1a1a1a;">{{ b.label
-                        }}</span><span style="display:block; font-size:14px; color:#9aa0a6; margin-top:3px;">{{ b.sub
+                    <span><span style="display:block; font-size:15px; font-weight:700; color:#1a1a1a;">{{ b.label
+                        }}</span><span style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">{{ b.sub
                         }}</span></span>
-                    <span style="font-size:17px; font-weight:700; color:#1a1a1a; white-space:nowrap;">{{ b.amount
+                    <span style="font-size:15px; font-weight:700; color:#1a1a1a; white-space:nowrap;">{{ b.amount
                       }}</span>
                   </div>
                 </sc-for>
                 <div
-                  style="display:flex; justify-content:space-between; padding:13px 20px 5px; font-size:15px; color:#6b7178;">
+                  style="display:flex; justify-content:space-between; padding:13px 20px 5px; font-size:13px; color:#6b7178;">
                   <span>Prijs excl. btw</span><span>{{ r.excl }}</span>
                 </div>
                 <div
-                  style="display:flex; justify-content:space-between; padding:5px 20px; font-size:15px; color:#6b7178;">
+                  style="display:flex; justify-content:space-between; padding:5px 20px; font-size:13px; color:#6b7178;">
                   <span>btw</span><span>{{ r.btw }}</span>
                 </div>
                 <div
-                  style="display:flex; justify-content:space-between; padding:8px 20px 16px; font-size:18px; font-weight:700; color:#1a1a1a;">
+                  style="display:flex; justify-content:space-between; padding:8px 20px 16px; font-size:15px; font-weight:700; color:#1a1a1a;">
                   <span>Totaal incl. btw</span><span>{{ r.total }}</span>
                 </div>
               </div>
@@ -476,13 +480,13 @@
               <sc-if value="{{ r.hasZon }}" hint-placeholder-val="{{ true }}">
                 <div style="margin-top:18px; border:1px solid #e8eaed; border-radius:14px; padding:20px;">
                   <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                    <span style="font-size:16px; font-weight:600; color:#1a1a1a;">Pas het aantal panelen aan</span>
-                    <span style="font-size:17px; font-weight:700; color:var(--pp-green);">{{ r.panels }}</span>
+                    <span style="font-size:14px; font-weight:600; color:#1a1a1a;">Pas het aantal panelen aan</span>
+                    <span style="font-size:15px; font-weight:700; color:var(--pp-green);">{{ r.panels }}</span>
                   </div>
                   <input type="range" min="{{ r.sliderMin }}" max="{{ r.sliderMax }}" value="{{ r.sliderVal }}"
                     onChange="{{ onPanels }}" oninput="{{ onPanels }}"
                     style="width:100%; margin:16px 0 6px; accent-color:var(--pp-green); cursor:pointer;">
-                  <div style="display:flex; justify-content:space-between; font-size:15px; color:#9aa0a6;"><span>{{
+                  <div style="display:flex; justify-content:space-between; font-size:13px; color:#9aa0a6;"><span>{{
                       r.kwp }}</span><span>{{ r.opbrengst }}</span></div>
                 </div>
               </sc-if>
@@ -490,7 +494,7 @@
               <!-- savings -->
               <div style="margin-top:18px; background:var(--pp-green-soft); border-radius:14px; padding:22px;">
                 <div
-                  style="display:flex; align-items:center; gap:9px; font-size:13px; font-weight:700; letter-spacing:0.05em; color:var(--pp-green);">
+                  style="display:flex; align-items:center; gap:9px; font-size:12px; font-weight:700; letter-spacing:0.05em; color:var(--pp-green);">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.4"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
@@ -498,32 +502,32 @@
                   </svg>JOUW BESPARING
                 </div>
                 <div
-                  style="font-size:33px; font-weight:700; color:var(--pp-green); margin:10px 0 16px; letter-spacing:-0.01em;">
+                  style="font-size:27px; font-weight:700; color:var(--pp-green); margin:10px 0 16px; letter-spacing:-0.01em;">
                   {{ r.per25 }}</div>
                 <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
                   <div style="background:#fff; border-radius:10px; padding:14px; text-align:center;">
-                    <div style="font-size:18px; font-weight:700; color:#1a1a1a;">{{ r.perMonth }}</div>
-                    <div style="font-size:13px; color:#9aa0a6; margin-top:2px;">per maand</div>
+                    <div style="font-size:15px; font-weight:700; color:#1a1a1a;">{{ r.perMonth }}</div>
+                    <div style="font-size:12px; color:#9aa0a6; margin-top:2px;">per maand</div>
                   </div>
                   <div style="background:#fff; border-radius:10px; padding:14px; text-align:center;">
-                    <div style="font-size:18px; font-weight:700; color:#1a1a1a;">{{ r.perYear }}</div>
-                    <div style="font-size:13px; color:#9aa0a6; margin-top:2px;">per jaar</div>
+                    <div style="font-size:15px; font-weight:700; color:#1a1a1a;">{{ r.perYear }}</div>
+                    <div style="font-size:12px; color:#9aa0a6; margin-top:2px;">per jaar</div>
                   </div>
                   <div style="background:#fff; border-radius:10px; padding:14px; text-align:center;">
-                    <div style="font-size:18px; font-weight:700; color:#1a1a1a;">{{ r.payback }}</div>
-                    <div style="font-size:13px; color:#9aa0a6; margin-top:2px;">terugverdiend</div>
+                    <div style="font-size:15px; font-weight:700; color:#1a1a1a;">{{ r.payback }}</div>
+                    <div style="font-size:12px; color:#9aa0a6; margin-top:2px;">terugverdiend</div>
                   </div>
                 </div>
-                <div style="font-size:14px; color:#5a8a6c; margin-top:14px;">{{ r.savingsCaption }}</div>
+                <div style="font-size:13px; color:#5a8a6c; margin-top:14px;">{{ r.savingsCaption }}</div>
               </div>
 
               <!-- inbegrepen -->
               <div style="margin-top:18px; border:1px solid #e8eaed; border-radius:14px; padding:20px;">
-                <div style="font-size:17px; font-weight:700; color:#1a1a1a; margin-bottom:14px;">Inbegrepen in deze
+                <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin-bottom:14px;">Inbegrepen in deze
                   prijs</div>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:13px;">
                   <sc-for list="{{ r.inbegrepen }}" as="i" hint-placeholder-count="4">
-                    <div style="display:flex; align-items:center; gap:10px; font-size:15px; color:#1a1a1a;"><svg
+                    <div style="display:flex; align-items:center; gap:10px; font-size:13px; color:#1a1a1a;"><svg
                         width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>
@@ -533,14 +537,14 @@
               </div>
 
               <sc-if value="{{ hasVerwarmingExtra }}" hint-placeholder-val="{{ false }}">
-                <div style="margin-top:14px; font-size:14px; color:#9aa0a6; line-height:1.5;">{{ verwarmingExtraNote }}
+                <div style="margin-top:14px; font-size:13px; color:#9aa0a6; line-height:1.5;">{{ verwarmingExtraNote }}
                 </div>
               </sc-if>
             </sc-if>
 
             <!-- trust + CTA -->
             <div
-              style="display:flex; align-items:center; gap:9px; justify-content:center; margin-top:24px; font-size:15px; color:#9aa0a6;">
+              style="display:flex; align-items:center; gap:9px; justify-content:center; margin-top:24px; font-size:13px; color:#9aa0a6;">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"></path>
@@ -548,7 +552,7 @@
               Gratis &amp; vrijblijvend
             </div>
             <div
-              style="display:flex; align-items:center; gap:9px; justify-content:center; margin-top:10px; font-size:15px; color:#6b7178;">
+              style="display:flex; align-items:center; gap:9px; justify-content:center; margin-top:10px; font-size:13px; color:#6b7178;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -558,11 +562,11 @@
               Al 1550+ gezinnen kozen voor Powerpartner
             </div>
             <button onClick="{{ onToContact }}"
-              style="margin-top:18px; width:100%; padding:19px 24px; background:var(--pp-green); color:#fff; border:none; border-radius:12px; font-family:Montserrat; font-size:17px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;"
+              style="margin-top:18px; width:100%; padding:19px 24px; background:var(--pp-green); color:#fff; border:none; border-radius:12px; font-family:Montserrat; font-size:15px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;"
               style-hover="background:var(--pp-green-hover);">Ontvang prijsindicatie &amp; plan adviesgesprek <span
-                style="font-size:19px;">→</span></button>
+                style="font-size:16px;">→</span></button>
             <button onClick="{{ onRestart }}"
-              style="width:100%; margin-top:6px; padding:14px; background:none; border:none; font-family:Montserrat; font-size:15px; color:#9aa0a6; cursor:pointer;"
+              style="width:100%; margin-top:6px; padding:14px; background:none; border:none; font-family:Montserrat; font-size:13px; color:#9aa0a6; cursor:pointer;"
               style-hover="color:#6b7178;">Opnieuw beginnen</button>
           </div>
         </sc-if>
@@ -570,16 +574,16 @@
         <!-- ============ CONTACT ============ -->
         <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
           <div style="padding:22px 28px 8px;">
-            <div style="font-size:26px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Waar mogen we je
+            <div style="font-size:21px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Waar mogen we je
               prijsindicatie sturen?</div>
-            <div style="font-size:16px; color:#6b7178; margin-top:7px;">Powerpartner neemt contact op om je
+            <div style="font-size:14px; color:#6b7178; margin-top:7px;">Powerpartner neemt contact op om je
               adviesgesprek
               in te plannen.</div>
             <div style="display:flex; flex-direction:column; gap:12px; margin-top:22px;">
               <sc-for list="{{ contactFields }}" as="f" hint-placeholder-count="6">
                 <input type="{{ f.type }}" value="{{ f.value }}" onChange="{{ f.onChange }}"
                   placeholder="{{ f.placeholder }}"
-                  style="width:100%; padding:17px; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:16px; color:#1a1a1a;"
+                  style="width:100%; padding:17px; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:14px; color:#1a1a1a;"
                   style-focus="outline:none; border-color:#22a551; box-shadow:var(--shadow-focus);">
               </sc-for>
             </div>
@@ -591,7 +595,7 @@
                   stroke-linecap="round" stroke-linejoin="round" style="opacity:{{ consentCheck }};">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg></span>
-              <span style="font-size:15px; color:#4d4d4d; line-height:1.45;">Ik geef Powerpartner toestemming om mijn
+              <span style="font-size:13px; color:#4d4d4d; line-height:1.45;">Ik geef Powerpartner toestemming om mijn
                 gegevens te gebruiken om mijn aanvraag te behandelen.</span>
             </button>
           </div>
@@ -607,50 +611,50 @@
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
             </div>
-            <div style="font-size:27px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Bedankt! Je prijsindicatie is
+            <div style="font-size:22px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Bedankt! Je prijsindicatie is
               onderweg.</div>
             <div
-              style="font-size:16px; color:#6b7178; margin-top:12px; line-height:1.5; max-width:380px; margin-left:auto; margin-right:auto;">
+              style="font-size:14px; color:#6b7178; margin-top:12px; line-height:1.5; max-width:380px; margin-left:auto; margin-right:auto;">
               Een van onze energie-experts neemt contact op om je adviesgesprek in te plannen. Je hoort snel van ons.
             </div>
             <button onClick="{{ onRestart }}"
-              style="margin-top:28px; padding:14px 28px; background:none; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:15px; font-weight:700; color:#1a1a1a; cursor:pointer;"
+              style="margin-top:28px; padding:14px 28px; background:none; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:13px; font-weight:700; color:#1a1a1a; cursor:pointer;"
               style-hover="border-color:#22a551;">Opnieuw beginnen</button>
           </div>
         </sc-if>
 
         <!-- ============ FOOTER NAV ============ -->
         <sc-if value="{{ showFooterNav }}" hint-placeholder-val="{{ false }}">
-          <div style="display:flex; gap:12px; padding:18px 28px 26px;">
+          <div style="display:flex; gap:10px; padding:14px 20px 20px;">
             <button onClick="{{ onBack }}"
-              style="padding:18px 26px; background:#fff; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:16px; font-weight:700; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; gap:9px;"
-              style-hover="border-color:#22a551;"><span style="font-size:18px;">←</span> Terug</button>
+              style="padding:14px 20px; background:#fff; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:13px; font-weight:700; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; gap:8px;"
+              style-hover="border-color:#22a551;"><span style="font-size:14px;">←</span> Terug</button>
             <button onClick="{{ onNext }}" disabled="{{ nextDisabled }}"
-              style="flex:1; padding:18px 24px; background:{{ nextBg }}; color:{{ nextColor }}; border:none; border-radius:12px; font-family:Montserrat; font-size:17px; font-weight:700; cursor:{{ nextCursor }}; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;">
+              style="flex:1; padding:14px 20px; background:{{ nextBg }}; color:{{ nextColor }}; border:none; border-radius:12px; font-family:Montserrat; font-size:13px; font-weight:700; cursor:{{ nextCursor }}; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;">
               <sc-if value="{{ nextSparkle }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18"
                   viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
                   stroke-linejoin="round">
                   <path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path>
                 </svg></sc-if>
-              {{ nextLabel }} <span style="font-size:19px;">→</span>
+              {{ nextLabel }} <span style="font-size:16px;">→</span>
             </button>
           </div>
         </sc-if>
 
         <!-- ============ CONTACT FOOTER ============ -->
         <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
-          <div style="display:flex; gap:12px; padding:8px 28px 26px;">
+          <div style="display:flex; gap:10px; padding:8px 20px 20px;">
             <button onClick="{{ onBack }}"
-              style="padding:18px 26px; background:#fff; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:16px; font-weight:700; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; gap:9px;"
-              style-hover="border-color:#22a551;"><span style="font-size:18px;">←</span> Terug</button>
+              style="padding:14px 20px; background:#fff; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:13px; font-weight:700; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; gap:8px;"
+              style-hover="border-color:#22a551;"><span style="font-size:14px;">←</span> Terug</button>
             <button onClick="{{ onSubmit }}" disabled="{{ submitDisabled }}"
-              style="flex:1; padding:18px 24px; background:{{ submitBg }}; color:{{ submitColor }}; border:none; border-radius:12px; font-family:Montserrat; font-size:17px; font-weight:700; cursor:{{ submitCursor }}; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;">Verstuur
-              <span style="font-size:19px;">→</span></button>
+              style="flex:1; padding:14px 20px; background:{{ submitBg }}; color:{{ submitColor }}; border:none; border-radius:12px; font-family:Montserrat; font-size:13px; font-weight:700; cursor:{{ submitCursor }}; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;">Verstuur
+              <span style="font-size:16px;">→</span></button>
           </div>
         </sc-if>
 
       </div>
-      <div style="font-size:13px; color:#b8bcc2; margin-top:18px;">Powerpartner - Empowering Green Innovation</div>
+      <div style="font-size:12px; color:#b8bcc2; margin-top:18px;">Powerpartner - Empowering Green Innovation</div>
     </div>
   </x-dc>
   <script type="text/x-dc" data-dc-script
@@ -1084,7 +1088,7 @@ class Component extends DCLogic {
       // progress
       topSegs, showQLabeled, qIndex, qTotal, qServiceName, qSegs,
       // intro
-      heroBg: (this.props.heroGradient ?? true) ? 'linear-gradient(150deg,#22a551 0%,#177238 100%)' : '#22a551',
+      heroBg: (this.props.heroGradient ?? true) ? 'linear-gradient(150deg,#1fa04d 0%,#0b5c2b 100%)' : '#189947',
       segPart, segBiz,
       // interesse
       intr,
