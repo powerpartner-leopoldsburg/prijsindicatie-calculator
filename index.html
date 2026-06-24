@@ -943,7 +943,7 @@ class Component extends DCLogic {
     if (key === 'bat_panelen') {
       const cap = a.thuisbatterij.gewensteCapaciteitKwh;
       const capOpt = (v) => this.opt(v + ' kWh', cap === v, () => this.setAnswer('thuisbatterij', { gewensteCapaciteitKwh: v }));
-      return { ...base, eyebrow: 'THUISBATTERIJ', title: 'Heb je al zonnepanelen?', subtitle: 'Een batterij zonder panelen heeft weinig zin — dan maken we een combi-offerte.', hasOptions: true,
+      return { ...base, eyebrow: 'THUISBATTERIJ', title: 'Heb je al zonnepanelen?', subtitle: 'Een batterij met panelen levert maximaal rendement. Anders maken we een combi-offerte.', hasOptions: true,
         options: [
           this.opt('Ja', a.thuisbatterij.heeftPanelen === true, () => {
             this.setAnswer('thuisbatterij', { heeftPanelen: true });
