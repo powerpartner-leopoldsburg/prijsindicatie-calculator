@@ -35,6 +35,17 @@
         :root {
           --pp-green-soft: #eef8f2;
         }
+
+        .product-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 9px;
+        }
+        @media (max-width: 560px) {
+          .product-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       </style>
     </helmet>
 
@@ -199,7 +210,7 @@
 
             <div style="font-size:10px; font-weight:700; letter-spacing:0.06em; color:#9aa0a6; margin:18px 0 9px;">
               ENERGIE-OPWEKKING &amp; OPSLAG</div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px;">
+            <div class="product-grid">
               <button onClick="{{ intr.zonnepanelen.onClick }}"
                 style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.zonnepanelen.border }}; background:{{ intr.zonnepanelen.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
@@ -264,7 +275,7 @@
 
             <div style="font-size:10px; font-weight:700; letter-spacing:0.06em; color:#9aa0a6; margin:16px 0 9px;">
               VERWARMING &amp; WATER</div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px;">
+            <div class="product-grid">
               <button onClick="{{ intr.warmtepomp.onClick }}"
                 style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.warmtepomp.border }}; background:{{ intr.warmtepomp.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
                 style-hover="border-color:#22a551;">
@@ -611,7 +622,8 @@
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
             </div>
-            <div style="font-size:22px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Bedankt! Je prijsindicatie is
+            <div style="font-size:22px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Bedankt! Je
+              prijsindicatie is
               onderweg.</div>
             <div
               style="font-size:14px; color:#6b7178; margin-top:12px; line-height:1.5; max-width:380px; margin-left:auto; margin-right:auto;">
