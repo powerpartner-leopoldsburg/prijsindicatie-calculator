@@ -273,68 +273,6 @@
               </button>
             </div>
 
-            <div style="font-size:10px; font-weight:700; letter-spacing:0.06em; color:#9aa0a6; margin:16px 0 9px;">
-              VERWARMING &amp; WATER</div>
-            <div class="product-grid">
-              <button onClick="{{ intr.warmtepomp.onClick }}"
-                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.warmtepomp.border }}; background:{{ intr.warmtepomp.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
-                style-hover="border-color:#22a551;">
-                <span
-                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
-                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4 4 0 1 0 5 0z"></path>
-                  </svg></span>
-                <span><span
-                    style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Warmtepomp</span><span
-                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Verwarm zuinig en zonder
-                    gas</span></span>
-              </button>
-              <button onClick="{{ intr.warmtepompboiler.onClick }}"
-                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.warmtepompboiler.border }}; background:{{ intr.warmtepompboiler.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
-                style-hover="border-color:#22a551;">
-                <span
-                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
-                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                  </svg></span>
-                <span><span
-                    style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Warmtepompboiler</span><span
-                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Tot 75% zuiniger warm
-                    water</span></span>
-              </button>
-              <button onClick="{{ intr.airco.onClick }}"
-                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.airco.border }}; background:{{ intr.airco.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
-                style-hover="border-color:#22a551;">
-                <span
-                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
-                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M9.59 4.59A2 2 0 1 1 11 8H2M12.59 19.41A2 2 0 1 0 14 16H2M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2">
-                    </path>
-                  </svg></span>
-                <span><span style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Airco</span><span
-                    style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Koelen in de zomer, verwarmen
-                    in de winter</span></span>
-              </button>
-              <button onClick="{{ intr.iets_anders.onClick }}"
-                style="text-align:left; padding:12px; border-radius:12px; border:1px solid {{ intr.iets_anders.border }}; background:{{ intr.iets_anders.bg }}; cursor:pointer; transition:all 150ms; display:flex; gap:13px; align-items:flex-start;"
-                style-hover="border-color:#22a551;">
-                <span
-                  style="flex:none; width:34px; height:34px; border-radius:8px; background:#f1f3f5; display:flex; align-items:center; justify-content:center;"><svg
-                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                  </svg></span>
-                <span><span style="display:block; font-size:12px; font-weight:700; color:#1a1a1a;">Iets
-                    anders</span><span style="display:block; font-size:11px; color:#9aa0a6; margin-top:2px;">Vertel ons
-                    wat je zoekt</span></span>
-              </button>
-            </div>
           </div>
         </sc-if>
 
@@ -415,28 +353,6 @@
         <!-- ============ RESULT ============ -->
         <sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
           <div style="padding:24px 28px 8px;">
-            <sc-if value="{{ isVerwarmingOnly }}" hint-placeholder-val="{{ false }}">
-              <div style="font-size:20px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">We maken je indicatie
-                op maat</div>
-              <div style="font-size:14px; color:#6b7178; margin-top:10px; line-height:1.5;">Voor warmtepomp, boiler en
-                airco hangt de prijs sterk af van je woning. We maken je indicatie op maat tijdens een gratis
-                adviesgesprek.</div>
-              <div style="margin-top:20px; background:var(--pp-green-soft); border-radius:14px; padding:20px;">
-                <div
-                  style="font-size:12px; font-weight:700; letter-spacing:0.04em; color:var(--pp-green); margin-bottom:12px;">
-                  JE INTERESSE</div>
-                <sc-for list="{{ verwarmingChips }}" as="c" hint-placeholder-count="2">
-                  <div
-                    style="display:flex; align-items:center; gap:10px; font-size:14px; color:#1a1a1a; padding:5px 0;">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#22a551" stroke-width="2.6"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>{{ c }} — bespreken we tijdens je adviesgesprek
-                  </div>
-                </sc-for>
-              </div>
-            </sc-if>
-
             <sc-if value="{{ hasPricing }}" hint-placeholder-val="{{ true }}">
               <div style="font-size:14px; color:#9aa0a6;">Prijs indicatie</div>
               <div
@@ -547,10 +463,6 @@
                 </div>
               </div>
 
-              <sc-if value="{{ hasVerwarmingExtra }}" hint-placeholder-val="{{ false }}">
-                <div style="margin-top:14px; font-size:13px; color:#9aa0a6; line-height:1.5;">{{ verwarmingExtraNote }}
-                </div>
-              </sc-if>
             </sc-if>
 
             <!-- trust + CTA -->
@@ -751,8 +663,8 @@ class Component extends DCLogic {
     return f;
   }
   curKey() { return this.flow()[this.state.pos] || 'intro'; }
-  go(d) { const f = this.flow(); this.setState(s => ({ pos: Math.max(0, Math.min(f.length - 1, s.pos + d)) })); }
-  goKey(k) { const i = this.flow().indexOf(k); if (i >= 0) this.setState({ pos: i }); }
+  go(d) { const f = this.flow(); this.setState(s => ({ pos: Math.max(0, Math.min(f.length - 1, s.pos + d)) })); window.scrollTo(0, 0); }
+  goKey(k) { const i = this.flow().indexOf(k); if (i >= 0) { this.setState({ pos: i }); window.scrollTo(0, 0); } }
   next() { this.go(1); }
   back() { this.go(-1); }
 
@@ -930,7 +842,7 @@ class Component extends DCLogic {
           this.opt('Nee, schat voor mij', z.verbruikGeschat === true, () => this.setAnswer('zonnepanelen', { verbruikGeschat: true, jaarverbruikKwh: 3500 }))
         ],
         showNumberInput: z.verbruikGeschat === false, numberValue: z.jaarverbruikKwh,
-        onNumberChange: (ev) => this.setAnswer('zonnepanelen', { jaarverbruikKwh: Number(ev.target.value) }) };
+        onNumberChange: (ev) => this.setAnswer('zonnepanelen', { jaarverbruikKwh: ev.target.value }) };
     }
     if (key === 'zon_dak') {
       const mk = (lbl, val) => this.opt(lbl, z.daktype === val, () => this.setAnswer('zonnepanelen', { daktype: val }));
@@ -1043,7 +955,7 @@ class Component extends DCLogic {
 
     // interest tiles
     const intr = {};
-    ['zonnepanelen', 'thuisbatterij', 'laadpaal', 'ems', 'warmtepomp', 'warmtepompboiler', 'airco', 'iets_anders'].forEach(k => {
+    ['zonnepanelen', 'thuisbatterij', 'laadpaal', 'ems'].forEach(k => {
       const t = this.tile(this.has(k));
       intr[k] = { ...t, onClick: () => this.toggleInterest(k) };
     });
@@ -1058,12 +970,7 @@ class Component extends DCLogic {
     const nextSparkle = ck === 'notes';
 
     // result
-    const isVerwarmingOnly = this.priced().length === 0 && S.interests.length > 0;
-    const hasPricing = !isVerwarmingOnly && this.priced().length > 0;
-    const verwarmingLabels = { warmtepomp: 'Warmtepomp', warmtepompboiler: 'Warmtepompboiler', airco: 'Airco', iets_anders: 'Iets anders' };
-    const verwarmingChips = Object.keys(verwarmingLabels).filter(k => this.has(k)).map(k => verwarmingLabels[k]);
-    const hasVerwarmingExtra = hasPricing && verwarmingChips.length > 0;
-    const verwarmingExtraNote = hasVerwarmingExtra ? `${verwarmingChips.join(', ')} bespreken we tijdens je plaatsbezoek.` : '';
+    const hasPricing = this.priced().length > 0;
 
     let r = {};
     if (isResult && hasPricing) {
@@ -1114,7 +1021,7 @@ class Component extends DCLogic {
       onNotes: (ev) => this.setState({ notes: ev.target.value }),
       onPanels: (ev) => this.setState({ panelsOverride: Number(ev.target.value) }),
       // result
-      isVerwarmingOnly, hasPricing, verwarmingChips, hasVerwarmingExtra, verwarmingExtraNote, r,
+      hasPricing, r,
       onToContact: () => this.goKey('contact'),
       onRestart: () => this.restart(),
       // contact
