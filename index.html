@@ -486,7 +486,7 @@
             </div>
             <button onClick="{{ onToContact }}"
               style="margin-top:18px; width:100%; padding:19px 24px; background:var(--pp-green); color:#fff; border:none; border-radius:12px; font-family:Montserrat; font-size:15px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 200ms;"
-              style-hover="background:var(--pp-green-hover);">Ontvang prijsindicatie &amp; plan adviesgesprek <span
+              style-hover="background:var(--pp-green-hover);">Prijsindicatie opslaan <span
                 style="font-size:16px;">→</span></button>
             <button onClick="{{ onRestart }}"
               style="width:100%; margin-top:6px; padding:14px; background:none; border:none; font-family:Montserrat; font-size:13px; color:#9aa0a6; cursor:pointer;"
@@ -498,10 +498,9 @@
         <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
           <div style="padding:22px 28px 8px;">
             <div style="font-size:21px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">Waar mogen we je
-              prijsindicatie sturen?</div>
-            <div style="font-size:14px; color:#6b7178; margin-top:7px;">Powerpartner neemt contact op om je
-              adviesgesprek
-              in te plannen.</div>
+              prijsindicatie naartoe sturen?</div>
+            <div style="font-size:14px; color:#6b7178; margin-top:7px;">We vragen naar je adres om te verifiëren dat Powerpartner al in jouw regio aanwezig is. 
+            </div>
             <div style="display:flex; flex-direction:column; gap:12px; margin-top:22px;">
               <sc-for list="{{ contactFields }}" as="f" hint-placeholder-count="6">
                 <input type="{{ f.type }}" value="{{ f.value }}" onChange="{{ f.onChange }}"
@@ -519,7 +518,7 @@
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg></span>
               <span style="font-size:13px; color:#4d4d4d; line-height:1.45;">Ik geef Powerpartner toestemming om mijn
-                gegevens te gebruiken om mijn aanvraag te behandelen.</span>
+                gegevens te gebruiken om mijn aanvraag te behandelen en om mij te contacteren in verband met mijn aanvraag.</span>
             </button>
           </div>
         </sc-if>
@@ -539,7 +538,8 @@
               onderweg.</div>
             <div
               style="font-size:14px; color:#6b7178; margin-top:12px; line-height:1.5; max-width:380px; margin-left:auto; margin-right:auto;">
-              Een van onze energie-experts neemt contact op om je adviesgesprek in te plannen. Je hoort snel van ons.
+              Je ontvangt zometeen een mailtje met daarin alle info van jouw persoonlijke prijsindicatie. Voor een daadwerkelijke offerte moeten wij even langskomen om alles te meten. 
+              Dat doen wij graag in een gratis adviesgesprek, waar een van onze energie-experts al jouw vragen kan beantwoorden en de beste oplossing voor jouw situatie kan uitwerken.
             </div>
             <button onClick="{{ onRestart }}"
               style="margin-top:28px; padding:14px 28px; background:none; border:1px solid #d8dade; border-radius:12px; font-family:Montserrat; font-size:13px; font-weight:700; color:#1a1a1a; cursor:pointer;"
